@@ -1,0 +1,138 @@
+C:\Users\projetoquantum\Documents\Contoso 2\C#\QuantumDesk\bin\QuantumDesk.dll.config
+C:\Users\projetoquantum\Documents\Contoso 2\C#\QuantumDesk\bin\QuantumDesk.dll
+C:\Users\projetoquantum\Documents\Contoso 2\C#\QuantumDesk\bin\QuantumDesk.pdb
+C:\Users\projetoquantum\Documents\Contoso 2\C#\QuantumDesk\bin\Antlr3.Runtime.dll
+C:\Users\projetoquantum\Documents\Contoso 2\C#\QuantumDesk\bin\EntityFramework.dll
+C:\Users\projetoquantum\Documents\Contoso 2\C#\QuantumDesk\bin\EntityFramework.SqlServer.dll
+C:\Users\projetoquantum\Documents\Contoso 2\C#\QuantumDesk\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\projetoquantum\Documents\Contoso 2\C#\QuantumDesk\bin\Newtonsoft.Json.dll
+C:\Users\projetoquantum\Documents\Contoso 2\C#\QuantumDesk\bin\PagedList.dll
+C:\Users\projetoquantum\Documents\Contoso 2\C#\QuantumDesk\bin\PagedList.Mvc.dll
+C:\Users\projetoquantum\Documents\Contoso 2\C#\QuantumDesk\bin\System.Web.Helpers.dll
+C:\Users\projetoquantum\Documents\Contoso 2\C#\QuantumDesk\bin\System.Web.Mvc.dll
+C:\Users\projetoquantum\Documents\Contoso 2\C#\QuantumDesk\bin\System.Web.Optimization.dll
+C:\Users\projetoquantum\Documents\Contoso 2\C#\QuantumDesk\bin\System.Web.Razor.dll
+C:\Users\projetoquantum\Documents\Contoso 2\C#\QuantumDesk\bin\System.Web.WebPages.Deployment.dll
+C:\Users\projetoquantum\Documents\Contoso 2\C#\QuantumDesk\bin\System.Web.WebPages.dll
+C:\Users\projetoquantum\Documents\Contoso 2\C#\QuantumDesk\bin\System.Web.WebPages.Razor.dll
+C:\Users\projetoquantum\Documents\Contoso 2\C#\QuantumDesk\bin\WebGrease.dll
+C:\Users\projetoquantum\Documents\Contoso 2\C#\QuantumDesk\bin\EntityFramework.xml
+C:\Users\projetoquantum\Documents\Contoso 2\C#\QuantumDesk\bin\EntityFramework.SqlServer.xml
+C:\Users\projetoquantum\Documents\Contoso 2\C#\QuantumDesk\bin\PagedList.xml
+C:\Users\projetoquantum\Documents\Contoso 2\C#\QuantumDesk\bin\PagedList.Mvc.xml
+C:\Users\projetoquantum\Documents\Contoso 2\C#\QuantumDesk\bin\System.Web.Helpers.xml
+C:\Users\projetoquantum\Documents\Contoso 2\C#\QuantumDesk\bin\System.Web.Mvc.xml
+C:\Users\projetoquantum\Documents\Contoso 2\C#\QuantumDesk\bin\System.Web.Optimization.xml
+C:\Users\projetoquantum\Documents\Contoso 2\C#\QuantumDesk\bin\System.Web.Razor.xml
+C:\Users\projetoquantum\Documents\Contoso 2\C#\QuantumDesk\bin\System.Web.WebPages.xml
+C:\Users\projetoquantum\Documents\Contoso 2\C#\QuantumDesk\bin\System.Web.WebPages.Deployment.xml
+C:\Users\projetoquantum\Documents\Contoso 2\C#\QuantumDesk\bin\System.Web.WebPages.Razor.xml
+C:\Users\projetoquantum\Documents\Contoso 2\C#\QuantumDesk\bin\Antlr3.Runtime.pdb
+C:\Users\projetoquantum\Documents\Contoso 2\C#\QuantumDesk\bin\Newtonsoft.Json.xml
+C:\Users\projetoquantum\Documents\Contoso 2\C#\QuantumDesk\obj\Debug\QuantumDesk.csprojAssemblyReference.cache
+C:\Users\projetoquantum\Documents\Contoso 2\C#\QuantumDesk\obj\Debug\QuantumDesk.csproj.CoreCompileInputs.cache
+C:\Users\projetoquantum\Documents\Contoso 2\C#\QuantumDesk\obj\Debug\QuantumDesk.csproj.CopyComplete
+C:\Users\projetoquantum\Documents\Contoso 2\C#\QuantumDesk\obj\Debug\QuantumDesk.dll
+C:\Users\projetoquantum\Documents\Contoso 2\C#\QuantumDesk\obj\Debug\QuantumDesk.pdb
+C:\Users\projetoquantum\Desktop\QuantumDesk\C#\QuantumDesk\obj\Debug\QuantumDesk.csproj.CoreCompileInputs.cache
+C:\Users\projetoquantum\Desktop\QuantumDesk\C#\QuantumDesk\obj\Debug\QuantumDesk.dll
+C:\Users\projetoquantum\Desktop\QuantumDesk\C#\QuantumDesk\obj\Debug\QuantumDesk.pdb
+C:\Users\projetoquantum\Desktop\QuantumDesk\C#\QuantumDesk\bin\QuantumDesk.dll.config
+C:\Users\projetoquantum\Desktop\QuantumDesk\C#\QuantumDesk\bin\QuantumDesk.dll
+C:\Users\projetoquantum\Desktop\QuantumDesk\C#\QuantumDesk\bin\QuantumDesk.pdb
+C:\Users\projetoquantum\Desktop\QuantumDesk\C#\QuantumDesk\bin\Antlr3.Runtime.dll
+C:\Users\projetoquantum\Desktop\QuantumDesk\C#\QuantumDesk\bin\EntityFramework.dll
+C:\Users\projetoquantum\Desktop\QuantumDesk\C#\QuantumDesk\bin\EntityFramework.SqlServer.dll
+C:\Users\projetoquantum\Desktop\QuantumDesk\C#\QuantumDesk\bin\Microsoft.EntityFrameworkCore.Abstractions.dll
+C:\Users\projetoquantum\Desktop\QuantumDesk\C#\QuantumDesk\bin\Microsoft.EntityFrameworkCore.Design.dll
+C:\Users\projetoquantum\Desktop\QuantumDesk\C#\QuantumDesk\bin\Microsoft.EntityFrameworkCore.dll
+C:\Users\projetoquantum\Desktop\QuantumDesk\C#\QuantumDesk\bin\Microsoft.EntityFrameworkCore.Relational.dll
+C:\Users\projetoquantum\Desktop\QuantumDesk\C#\QuantumDesk\bin\Microsoft.Extensions.Caching.Abstractions.dll
+C:\Users\projetoquantum\Desktop\QuantumDesk\C#\QuantumDesk\bin\Microsoft.Extensions.Caching.Memory.dll
+C:\Users\projetoquantum\Desktop\QuantumDesk\C#\QuantumDesk\bin\Microsoft.Extensions.Configuration.Abstractions.dll
+C:\Users\projetoquantum\Desktop\QuantumDesk\C#\QuantumDesk\bin\Microsoft.Extensions.Configuration.Binder.dll
+C:\Users\projetoquantum\Desktop\QuantumDesk\C#\QuantumDesk\bin\Microsoft.Extensions.Configuration.dll
+C:\Users\projetoquantum\Desktop\QuantumDesk\C#\QuantumDesk\bin\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\projetoquantum\Desktop\QuantumDesk\C#\QuantumDesk\bin\Microsoft.Extensions.DependencyInjection.dll
+C:\Users\projetoquantum\Desktop\QuantumDesk\C#\QuantumDesk\bin\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\projetoquantum\Desktop\QuantumDesk\C#\QuantumDesk\bin\Microsoft.Extensions.Logging.dll
+C:\Users\projetoquantum\Desktop\QuantumDesk\C#\QuantumDesk\bin\Microsoft.Extensions.Options.dll
+C:\Users\projetoquantum\Desktop\QuantumDesk\C#\QuantumDesk\bin\Microsoft.Extensions.Primitives.dll
+C:\Users\projetoquantum\Desktop\QuantumDesk\C#\QuantumDesk\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\projetoquantum\Desktop\QuantumDesk\C#\QuantumDesk\bin\Newtonsoft.Json.dll
+C:\Users\projetoquantum\Desktop\QuantumDesk\C#\QuantumDesk\bin\PagedList.dll
+C:\Users\projetoquantum\Desktop\QuantumDesk\C#\QuantumDesk\bin\PagedList.Mvc.dll
+C:\Users\projetoquantum\Desktop\QuantumDesk\C#\QuantumDesk\bin\Remotion.Linq.dll
+C:\Users\projetoquantum\Desktop\QuantumDesk\C#\QuantumDesk\bin\System.Buffers.dll
+C:\Users\projetoquantum\Desktop\QuantumDesk\C#\QuantumDesk\bin\System.Collections.Immutable.dll
+C:\Users\projetoquantum\Desktop\QuantumDesk\C#\QuantumDesk\bin\System.ComponentModel.Annotations.dll
+C:\Users\projetoquantum\Desktop\QuantumDesk\C#\QuantumDesk\bin\System.Diagnostics.DiagnosticSource.dll
+C:\Users\projetoquantum\Desktop\QuantumDesk\C#\QuantumDesk\bin\System.Interactive.Async.dll
+C:\Users\projetoquantum\Desktop\QuantumDesk\C#\QuantumDesk\bin\System.Memory.dll
+C:\Users\projetoquantum\Desktop\QuantumDesk\C#\QuantumDesk\bin\System.Numerics.Vectors.dll
+C:\Users\projetoquantum\Desktop\QuantumDesk\C#\QuantumDesk\bin\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\projetoquantum\Desktop\QuantumDesk\C#\QuantumDesk\bin\System.Web.Helpers.dll
+C:\Users\projetoquantum\Desktop\QuantumDesk\C#\QuantumDesk\bin\System.Web.Mvc.dll
+C:\Users\projetoquantum\Desktop\QuantumDesk\C#\QuantumDesk\bin\System.Web.Optimization.dll
+C:\Users\projetoquantum\Desktop\QuantumDesk\C#\QuantumDesk\bin\System.Web.Razor.dll
+C:\Users\projetoquantum\Desktop\QuantumDesk\C#\QuantumDesk\bin\System.Web.WebPages.Deployment.dll
+C:\Users\projetoquantum\Desktop\QuantumDesk\C#\QuantumDesk\bin\System.Web.WebPages.dll
+C:\Users\projetoquantum\Desktop\QuantumDesk\C#\QuantumDesk\bin\System.Web.WebPages.Razor.dll
+C:\Users\projetoquantum\Desktop\QuantumDesk\C#\QuantumDesk\bin\WebGrease.dll
+C:\Users\projetoquantum\Desktop\QuantumDesk\C#\QuantumDesk\bin\EntityFramework.xml
+C:\Users\projetoquantum\Desktop\QuantumDesk\C#\QuantumDesk\bin\EntityFramework.SqlServer.xml
+C:\Users\projetoquantum\Desktop\QuantumDesk\C#\QuantumDesk\bin\Microsoft.EntityFrameworkCore.xml
+C:\Users\projetoquantum\Desktop\QuantumDesk\C#\QuantumDesk\bin\Microsoft.EntityFrameworkCore.Abstractions.xml
+C:\Users\projetoquantum\Desktop\QuantumDesk\C#\QuantumDesk\bin\Microsoft.EntityFrameworkCore.Design.xml
+C:\Users\projetoquantum\Desktop\QuantumDesk\C#\QuantumDesk\bin\Microsoft.EntityFrameworkCore.Relational.xml
+C:\Users\projetoquantum\Desktop\QuantumDesk\C#\QuantumDesk\bin\Microsoft.Extensions.Caching.Abstractions.xml
+C:\Users\projetoquantum\Desktop\QuantumDesk\C#\QuantumDesk\bin\Microsoft.Extensions.Caching.Memory.xml
+C:\Users\projetoquantum\Desktop\QuantumDesk\C#\QuantumDesk\bin\Microsoft.Extensions.Configuration.xml
+C:\Users\projetoquantum\Desktop\QuantumDesk\C#\QuantumDesk\bin\Microsoft.Extensions.Configuration.Abstractions.xml
+C:\Users\projetoquantum\Desktop\QuantumDesk\C#\QuantumDesk\bin\Microsoft.Extensions.Configuration.Binder.xml
+C:\Users\projetoquantum\Desktop\QuantumDesk\C#\QuantumDesk\bin\Microsoft.Extensions.DependencyInjection.xml
+C:\Users\projetoquantum\Desktop\QuantumDesk\C#\QuantumDesk\bin\Microsoft.Extensions.DependencyInjection.Abstractions.xml
+C:\Users\projetoquantum\Desktop\QuantumDesk\C#\QuantumDesk\bin\Microsoft.Extensions.Logging.xml
+C:\Users\projetoquantum\Desktop\QuantumDesk\C#\QuantumDesk\bin\Microsoft.Extensions.Logging.Abstractions.xml
+C:\Users\projetoquantum\Desktop\QuantumDesk\C#\QuantumDesk\bin\Microsoft.Extensions.Options.xml
+C:\Users\projetoquantum\Desktop\QuantumDesk\C#\QuantumDesk\bin\Microsoft.Extensions.Primitives.xml
+C:\Users\projetoquantum\Desktop\QuantumDesk\C#\QuantumDesk\bin\PagedList.xml
+C:\Users\projetoquantum\Desktop\QuantumDesk\C#\QuantumDesk\bin\PagedList.Mvc.xml
+C:\Users\projetoquantum\Desktop\QuantumDesk\C#\QuantumDesk\bin\Remotion.Linq.xml
+C:\Users\projetoquantum\Desktop\QuantumDesk\C#\QuantumDesk\bin\System.Buffers.xml
+C:\Users\projetoquantum\Desktop\QuantumDesk\C#\QuantumDesk\bin\System.Collections.Immutable.xml
+C:\Users\projetoquantum\Desktop\QuantumDesk\C#\QuantumDesk\bin\System.Diagnostics.DiagnosticSource.xml
+C:\Users\projetoquantum\Desktop\QuantumDesk\C#\QuantumDesk\bin\System.Interactive.Async.xml
+C:\Users\projetoquantum\Desktop\QuantumDesk\C#\QuantumDesk\bin\System.Memory.xml
+C:\Users\projetoquantum\Desktop\QuantumDesk\C#\QuantumDesk\bin\System.Numerics.Vectors.xml
+C:\Users\projetoquantum\Desktop\QuantumDesk\C#\QuantumDesk\bin\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\projetoquantum\Desktop\QuantumDesk\C#\QuantumDesk\bin\System.Web.Helpers.xml
+C:\Users\projetoquantum\Desktop\QuantumDesk\C#\QuantumDesk\bin\System.Web.Mvc.xml
+C:\Users\projetoquantum\Desktop\QuantumDesk\C#\QuantumDesk\bin\System.Web.Optimization.xml
+C:\Users\projetoquantum\Desktop\QuantumDesk\C#\QuantumDesk\bin\System.Web.Razor.xml
+C:\Users\projetoquantum\Desktop\QuantumDesk\C#\QuantumDesk\bin\System.Web.WebPages.xml
+C:\Users\projetoquantum\Desktop\QuantumDesk\C#\QuantumDesk\bin\System.Web.WebPages.Deployment.xml
+C:\Users\projetoquantum\Desktop\QuantumDesk\C#\QuantumDesk\bin\System.Web.WebPages.Razor.xml
+C:\Users\projetoquantum\Desktop\QuantumDesk\C#\QuantumDesk\bin\Antlr3.Runtime.pdb
+C:\Users\projetoquantum\Desktop\QuantumDesk\C#\QuantumDesk\bin\Newtonsoft.Json.xml
+C:\Users\projetoquantum\Desktop\QuantumDesk\C#\QuantumDesk\obj\Debug\QuantumDesk.csproj.CopyComplete
+C:\Users\projetoquantum\Desktop\QuantumDesk\C#\QuantumDesk\bin\EntityFramework.Core.dll
+C:\Users\projetoquantum\Desktop\QuantumDesk\C#\QuantumDesk\bin\EntityFramework.MicrosoftSqlServer.Design.dll
+C:\Users\projetoquantum\Desktop\QuantumDesk\C#\QuantumDesk\bin\EntityFramework.MicrosoftSqlServer.dll
+C:\Users\projetoquantum\Desktop\QuantumDesk\C#\QuantumDesk\bin\EntityFramework.Relational.Design.dll
+C:\Users\projetoquantum\Desktop\QuantumDesk\C#\QuantumDesk\bin\EntityFramework.Relational.dll
+C:\Users\projetoquantum\Desktop\QuantumDesk\C#\QuantumDesk\bin\Microsoft.Extensions.OptionsModel.dll
+C:\Users\projetoquantum\Desktop\QuantumDesk\C#\QuantumDesk\bin\EntityFramework.Core.xml
+C:\Users\projetoquantum\Desktop\QuantumDesk\C#\QuantumDesk\bin\EntityFramework.MicrosoftSqlServer.xml
+C:\Users\projetoquantum\Desktop\QuantumDesk\C#\QuantumDesk\bin\EntityFramework.MicrosoftSqlServer.Design.xml
+C:\Users\projetoquantum\Desktop\QuantumDesk\C#\QuantumDesk\bin\EntityFramework.Relational.xml
+C:\Users\projetoquantum\Desktop\QuantumDesk\C#\QuantumDesk\bin\EntityFramework.Relational.Design.xml
+C:\Users\projetoquantum\Desktop\QuantumDesk\C#\QuantumDesk\bin\Microsoft.Extensions.OptionsModel.xml
+C:\Users\projetoquantum\Desktop\QuantumDesk\C#\QuantumDesk\bin\Microsoft.EntityFrameworkCore.Relational.Design.dll
+C:\Users\projetoquantum\Desktop\QuantumDesk\C#\QuantumDesk\bin\Microsoft.EntityFrameworkCore.SqlServer.Design.dll
+C:\Users\projetoquantum\Desktop\QuantumDesk\C#\QuantumDesk\bin\Microsoft.EntityFrameworkCore.SqlServer.dll
+C:\Users\projetoquantum\Desktop\QuantumDesk\C#\QuantumDesk\bin\System.Data.SqlClient.dll
+C:\Users\projetoquantum\Desktop\QuantumDesk\C#\QuantumDesk\bin\Microsoft.EntityFrameworkCore.Relational.Design.xml
+C:\Users\projetoquantum\Desktop\QuantumDesk\C#\QuantumDesk\bin\Microsoft.EntityFrameworkCore.SqlServer.xml
+C:\Users\projetoquantum\Desktop\QuantumDesk\C#\QuantumDesk\bin\Microsoft.EntityFrameworkCore.SqlServer.Design.xml
+C:\Users\projetoquantum\Desktop\QuantumDesk\C#\QuantumDesk\obj\Debug\QuantumDesk.csprojAssemblyReference.cache

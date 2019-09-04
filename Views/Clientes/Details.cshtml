@@ -1,0 +1,82 @@
+﻿@model QuantumDesk.CLIENTE
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>CLIENTE</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.CPF_CNPJ)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CPF_CNPJ)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NOME_RAZAOSOCIAL)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NOME_RAZAOSOCIAL)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RESPONSAVEL)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RESPONSAVEL)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.STATUS_CLIENTE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.STATUS_CLIENTE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ENDERECO_CLIENTE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ENDERECO_CLIENTE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TELEFONE_CLIENTE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TELEFONE_CLIENTE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EMAIL_CLIENTE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EMAIL_CLIENTE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SENHA_CLIENTE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SENHA_CLIENTE)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.CODIGO_CLIENTE }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
