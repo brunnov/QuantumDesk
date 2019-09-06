@@ -1,0 +1,51 @@
+﻿@model IEnumerable<QuantumDesk.CLIENTES>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.RESPONSAVEL)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DIA_PAGAMENTO)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FORMA_PAGAMENTO.DESCRICAO_FORMA_PAGAMENTO)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.USUARIOS.CPF_CNPJ)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.RESPONSAVEL)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DIA_PAGAMENTO)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FORMA_PAGAMENTO.DESCRICAO_FORMA_PAGAMENTO)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.USUARIOS.CPF_CNPJ)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.CODIGO_CLIENTE }) |
+            @Html.ActionLink("Details", "Details", new { id=item.CODIGO_CLIENTE }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.CODIGO_CLIENTE })
+        </td>
+    </tr>
+}
+
+</table>

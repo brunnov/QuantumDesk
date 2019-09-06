@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="65effc3d99834828a6f6ab773141a71b" Name="Diagram1">
+        <EntityTypeShape EntityType="QuantumDesk.AGENDAMENTOS" Width="1.5" PointX="12" PointY="1.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuantumDesk.ANALISTAS" Width="1.5" PointX="7.5" PointY="9.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuantumDesk.CHAMADOS" Width="1.5" PointX="7.5" PointY="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuantumDesk.CLIENTES" Width="1.5" PointX="3" PointY="1.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuantumDesk.CONTRATOS" Width="1.5" PointX="5.25" PointY="1.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuantumDesk.ESPECIALIDADES" Width="1.5" PointX="5.25" PointY="9.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuantumDesk.FORMA_PAGAMENTO" Width="1.5" PointX="0.75" PointY="2.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuantumDesk.OS" Width="1.5" PointX="9.75" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuantumDesk.SERVICOS" Width="1.5" PointX="7.5" PointY="6.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuantumDesk.STATUS_CHAMADOS" Width="1.5" PointX="5.25" PointY="6.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuantumDesk.STATUS_OS" Width="1.5" PointX="7.5" PointY="12.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuantumDesk.STATUS_USUARIOS" Width="1.5" PointX="1.5" PointY="10.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuantumDesk.USUARIOS" Width="1.5" PointX="0.75" PointY="5.25" IsExpanded="true" />
+        <AssociationConnector Association="QuantumDesk.FK__AGENDAMEN__CODIG__45F365D3" ManuallyRouted="false" />
+        <AssociationConnector Association="QuantumDesk.FK__ANALISTAS__CODIG__32E0915F" ManuallyRouted="false" />
+        <AssociationConnector Association="QuantumDesk.FK__ANALISTAS__ID_US__31EC6D26" ManuallyRouted="false" />
+        <AssociationConnector Association="QuantumDesk.FK__OS__MATRICULA_AN__412EB0B6" ManuallyRouted="false" />
+        <AssociationConnector Association="QuantumDesk.FK__CHAMADOS__CODIGO__3C69FB99" ManuallyRouted="false" />
+        <AssociationConnector Association="QuantumDesk.FK__CHAMADOS__CODIGO__3D5E1FD2" ManuallyRouted="false" />
+        <AssociationConnector Association="QuantumDesk.FK__OS__CODIGO_CHAMA__403A8C7D" ManuallyRouted="false" />
+        <AssociationConnector Association="QuantumDesk.FK__CLIENTES__CODIGO__36B12243" ManuallyRouted="false" />
+        <AssociationConnector Association="QuantumDesk.FK__CLIENTES__ID_USU__35BCFE0A" ManuallyRouted="false" />
+        <AssociationConnector Association="QuantumDesk.FK__CONTRATOS__CODIG__398D8EEE" ManuallyRouted="false" />
+        <AssociationConnector Association="QuantumDesk.FK__OS__CODIGO_SERVI__4222D4EF" ManuallyRouted="false" />
+        <AssociationConnector Association="QuantumDesk.FK__OS__CODIGO_STATU__4316F928" ManuallyRouted="false" />
+        <AssociationConnector Association="QuantumDesk.FK__USUARIOS__CODIGO__2F10007B" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

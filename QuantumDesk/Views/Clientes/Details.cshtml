@@ -1,0 +1,50 @@
+﻿@model QuantumDesk.CLIENTES
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>CLIENTES</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.RESPONSAVEL)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RESPONSAVEL)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DIA_PAGAMENTO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DIA_PAGAMENTO)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FORMA_PAGAMENTO.DESCRICAO_FORMA_PAGAMENTO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FORMA_PAGAMENTO.DESCRICAO_FORMA_PAGAMENTO)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.USUARIOS.CPF_CNPJ)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.USUARIOS.CPF_CNPJ)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.CODIGO_CLIENTE }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

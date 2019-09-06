@@ -1,0 +1,45 @@
+﻿@model IEnumerable<QuantumDesk.CONTRATOS>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.INICIO_CONTRATO)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FIM_CONTRATO)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CLIENTES.RESPONSAVEL)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.INICIO_CONTRATO)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FIM_CONTRATO)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CLIENTES.RESPONSAVEL)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.CODIGO_CONTRATO }) |
+            @Html.ActionLink("Details", "Details", new { id=item.CODIGO_CONTRATO }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.CODIGO_CONTRATO })
+        </td>
+    </tr>
+}
+
+</table>

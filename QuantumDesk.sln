@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.421
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuantumDesk", "QuantumDesk\QuantumDesk.csproj", "{BC0BC25D-08F8-4B12-AC70-5BE7B8007958}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BC0BC25D-08F8-4B12-AC70-5BE7B8007958}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BC0BC25D-08F8-4B12-AC70-5BE7B8007958}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BC0BC25D-08F8-4B12-AC70-5BE7B8007958}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BC0BC25D-08F8-4B12-AC70-5BE7B8007958}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E505F29D-6612-4249-BAD6-9156F1A3A1BE}
+	EndGlobalSection
+EndGlobal

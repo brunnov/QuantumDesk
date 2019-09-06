@@ -1,0 +1,58 @@
+﻿@model QuantumDesk.CHAMADOS
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>CHAMADOS</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.DATA_ABERTURA_CHAMADO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DATA_ABERTURA_CHAMADO)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DATA_TERMINO_CHAMADO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DATA_TERMINO_CHAMADO)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DESCRICAO_CHAMADO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DESCRICAO_CHAMADO)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CONTRATOS.CODIGO_CONTRATO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CONTRATOS.CODIGO_CONTRATO)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.STATUS_CHAMADOS.DESCRICAO_STATUS_CHAMADOS)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.STATUS_CHAMADOS.DESCRICAO_STATUS_CHAMADOS)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.CODIGO_CHAMADO }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -1,0 +1,884 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="QuantumDesk.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="AGENDAMENTOS">
+          <Key>
+            <PropertyRef Name="CODIGO_AGENDAMENTO" />
+          </Key>
+          <Property Name="CODIGO_AGENDAMENTO" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CODIGO_OS" Type="int" />
+          <Property Name="DATA_AGENDAMENTO" Type="date" />
+          <Property Name="DESCRICAO_AGENDAMENTO" Type="varchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="ANALISTAS">
+          <Key>
+            <PropertyRef Name="MATRICULA_ANALISTA" />
+          </Key>
+          <Property Name="MATRICULA_ANALISTA" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ID_USUARIO" Type="int" />
+          <Property Name="GERENTE" Type="int" />
+          <Property Name="CARGA_HORARIA" Type="int" />
+          <Property Name="CODIGO_ESPECIALIDADE" Type="int" />
+        </EntityType>
+        <EntityType Name="CHAMADOS">
+          <Key>
+            <PropertyRef Name="CODIGO_CHAMADO" />
+          </Key>
+          <Property Name="CODIGO_CHAMADO" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CODIGO_CONTRATO" Type="int" />
+          <Property Name="DATA_ABERTURA_CHAMADO" Type="date" />
+          <Property Name="DATA_TERMINO_CHAMADO" Type="date" />
+          <Property Name="CODIGO_STATUS_CHAMADOS" Type="int" />
+          <Property Name="DESCRICAO_CHAMADO" Type="varchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="CLIENTES">
+          <Key>
+            <PropertyRef Name="CODIGO_CLIENTE" />
+          </Key>
+          <Property Name="CODIGO_CLIENTE" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ID_USUARIO" Type="int" />
+          <Property Name="RESPONSAVEL" Type="varchar" MaxLength="100" />
+          <Property Name="CODIGO_FORMA_PAGAMENTO" Type="int" />
+          <Property Name="DIA_PAGAMENTO" Type="int" />
+        </EntityType>
+        <EntityType Name="CONTRATOS">
+          <Key>
+            <PropertyRef Name="CODIGO_CONTRATO" />
+          </Key>
+          <Property Name="CODIGO_CONTRATO" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CODIGO_CLIENTE" Type="int" />
+          <Property Name="INICIO_CONTRATO" Type="date" />
+          <Property Name="FIM_CONTRATO" Type="date" />
+        </EntityType>
+        <EntityType Name="ESPECIALIDADES">
+          <Key>
+            <PropertyRef Name="CODIGO_ESPECIALIDADE" />
+          </Key>
+          <Property Name="CODIGO_ESPECIALIDADE" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DESCRICAO_ESPECIALIDADE" Type="varchar" MaxLength="30" />
+        </EntityType>
+        <EntityType Name="FORMA_PAGAMENTO">
+          <Key>
+            <PropertyRef Name="CODIGO_FORMA_PAGAMENTO" />
+          </Key>
+          <Property Name="CODIGO_FORMA_PAGAMENTO" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DESCRICAO_FORMA_PAGAMENTO" Type="varchar" MaxLength="30" />
+        </EntityType>
+        <EntityType Name="OS">
+          <Key>
+            <PropertyRef Name="CODIGO_OS" />
+          </Key>
+          <Property Name="CODIGO_OS" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CODIGO_CHAMADO" Type="int" />
+          <Property Name="DATA_ABERTURA_OS" Type="date" />
+          <Property Name="DATA_TERMINO_OS" Type="date" />
+          <Property Name="CODIGO_STATUS_OS" Type="int" />
+          <Property Name="MATRICULA_ANALISTA" Type="int" />
+          <Property Name="PRIORIDADE" Type="varchar" MaxLength="5" />
+          <Property Name="CODIGO_SERVICO" Type="int" />
+          <Property Name="DESCRICAO_OS" Type="varchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="SERVICOS">
+          <Key>
+            <PropertyRef Name="CODIGO_SERVICO" />
+          </Key>
+          <Property Name="CODIGO_SERVICO" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DESCRICAO_SERVICO" Type="varchar" MaxLength="30" />
+        </EntityType>
+        <EntityType Name="STATUS_CHAMADOS">
+          <Key>
+            <PropertyRef Name="CODIGO_STATUS_CHAMADOS" />
+          </Key>
+          <Property Name="CODIGO_STATUS_CHAMADOS" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DESCRICAO_STATUS_CHAMADOS" Type="varchar" MaxLength="30" />
+        </EntityType>
+        <EntityType Name="STATUS_OS">
+          <Key>
+            <PropertyRef Name="CODIGO_STATUS_OS" />
+          </Key>
+          <Property Name="CODIGO_STATUS_OS" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DESCRICAO_STATUS_OS" Type="varchar" MaxLength="30" />
+        </EntityType>
+        <EntityType Name="STATUS_USUARIOS">
+          <Key>
+            <PropertyRef Name="CODIGO_STATUS_USUARIOS" />
+          </Key>
+          <Property Name="CODIGO_STATUS_USUARIOS" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DESCRICAO_STATUS_USUARIOS" Type="varchar" MaxLength="30" />
+        </EntityType>
+        <EntityType Name="USUARIOS">
+          <Key>
+            <PropertyRef Name="ID_USUARIO" />
+          </Key>
+          <Property Name="ID_USUARIO" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CPF_CNPJ" Type="varchar" MaxLength="15" />
+          <Property Name="NOME_RAZAOSOCIAL" Type="varchar" MaxLength="100" />
+          <Property Name="CODIGO_STATUS_USUARIOS" Type="int" />
+          <Property Name="ENDERECO" Type="varchar" MaxLength="100" />
+          <Property Name="TELEFONE" Type="varchar" MaxLength="30" />
+          <Property Name="EMAIL" Type="varchar" MaxLength="100" />
+          <Property Name="SENHA" Type="varchar" MaxLength="10" />
+          <Property Name="TIPO" Type="varchar" MaxLength="10" />
+        </EntityType>
+        <Association Name="FK__AGENDAMEN__CODIG__45F365D3">
+          <End Role="OS" Type="Self.OS" Multiplicity="0..1" />
+          <End Role="AGENDAMENTOS" Type="Self.AGENDAMENTOS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="OS">
+              <PropertyRef Name="CODIGO_OS" />
+            </Principal>
+            <Dependent Role="AGENDAMENTOS">
+              <PropertyRef Name="CODIGO_OS" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__ANALISTAS__CODIG__32E0915F">
+          <End Role="ESPECIALIDADES" Type="Self.ESPECIALIDADES" Multiplicity="0..1" />
+          <End Role="ANALISTAS" Type="Self.ANALISTAS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ESPECIALIDADES">
+              <PropertyRef Name="CODIGO_ESPECIALIDADE" />
+            </Principal>
+            <Dependent Role="ANALISTAS">
+              <PropertyRef Name="CODIGO_ESPECIALIDADE" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__ANALISTAS__ID_US__31EC6D26">
+          <End Role="USUARIOS" Type="Self.USUARIOS" Multiplicity="0..1" />
+          <End Role="ANALISTAS" Type="Self.ANALISTAS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="USUARIOS">
+              <PropertyRef Name="ID_USUARIO" />
+            </Principal>
+            <Dependent Role="ANALISTAS">
+              <PropertyRef Name="ID_USUARIO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__CHAMADOS__CODIGO__3C69FB99">
+          <End Role="CONTRATOS" Type="Self.CONTRATOS" Multiplicity="0..1" />
+          <End Role="CHAMADOS" Type="Self.CHAMADOS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CONTRATOS">
+              <PropertyRef Name="CODIGO_CONTRATO" />
+            </Principal>
+            <Dependent Role="CHAMADOS">
+              <PropertyRef Name="CODIGO_CONTRATO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__CHAMADOS__CODIGO__3D5E1FD2">
+          <End Role="STATUS_CHAMADOS" Type="Self.STATUS_CHAMADOS" Multiplicity="0..1" />
+          <End Role="CHAMADOS" Type="Self.CHAMADOS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="STATUS_CHAMADOS">
+              <PropertyRef Name="CODIGO_STATUS_CHAMADOS" />
+            </Principal>
+            <Dependent Role="CHAMADOS">
+              <PropertyRef Name="CODIGO_STATUS_CHAMADOS" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__CLIENTES__CODIGO__36B12243">
+          <End Role="FORMA_PAGAMENTO" Type="Self.FORMA_PAGAMENTO" Multiplicity="0..1" />
+          <End Role="CLIENTES" Type="Self.CLIENTES" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FORMA_PAGAMENTO">
+              <PropertyRef Name="CODIGO_FORMA_PAGAMENTO" />
+            </Principal>
+            <Dependent Role="CLIENTES">
+              <PropertyRef Name="CODIGO_FORMA_PAGAMENTO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__CLIENTES__ID_USU__35BCFE0A">
+          <End Role="USUARIOS" Type="Self.USUARIOS" Multiplicity="0..1" />
+          <End Role="CLIENTES" Type="Self.CLIENTES" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="USUARIOS">
+              <PropertyRef Name="ID_USUARIO" />
+            </Principal>
+            <Dependent Role="CLIENTES">
+              <PropertyRef Name="ID_USUARIO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__CONTRATOS__CODIG__398D8EEE">
+          <End Role="CLIENTES" Type="Self.CLIENTES" Multiplicity="0..1" />
+          <End Role="CONTRATOS" Type="Self.CONTRATOS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CLIENTES">
+              <PropertyRef Name="CODIGO_CLIENTE" />
+            </Principal>
+            <Dependent Role="CONTRATOS">
+              <PropertyRef Name="CODIGO_CLIENTE" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__OS__CODIGO_CHAMA__403A8C7D">
+          <End Role="CHAMADOS" Type="Self.CHAMADOS" Multiplicity="0..1" />
+          <End Role="OS" Type="Self.OS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CHAMADOS">
+              <PropertyRef Name="CODIGO_CHAMADO" />
+            </Principal>
+            <Dependent Role="OS">
+              <PropertyRef Name="CODIGO_CHAMADO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__OS__CODIGO_SERVI__4222D4EF">
+          <End Role="SERVICOS" Type="Self.SERVICOS" Multiplicity="0..1" />
+          <End Role="OS" Type="Self.OS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SERVICOS">
+              <PropertyRef Name="CODIGO_SERVICO" />
+            </Principal>
+            <Dependent Role="OS">
+              <PropertyRef Name="CODIGO_SERVICO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__OS__CODIGO_STATU__4316F928">
+          <End Role="STATUS_OS" Type="Self.STATUS_OS" Multiplicity="0..1" />
+          <End Role="OS" Type="Self.OS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="STATUS_OS">
+              <PropertyRef Name="CODIGO_STATUS_OS" />
+            </Principal>
+            <Dependent Role="OS">
+              <PropertyRef Name="CODIGO_STATUS_OS" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__OS__MATRICULA_AN__412EB0B6">
+          <End Role="ANALISTAS" Type="Self.ANALISTAS" Multiplicity="0..1" />
+          <End Role="OS" Type="Self.OS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ANALISTAS">
+              <PropertyRef Name="MATRICULA_ANALISTA" />
+            </Principal>
+            <Dependent Role="OS">
+              <PropertyRef Name="MATRICULA_ANALISTA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__USUARIOS__CODIGO__2F10007B">
+          <End Role="STATUS_USUARIOS" Type="Self.STATUS_USUARIOS" Multiplicity="0..1" />
+          <End Role="USUARIOS" Type="Self.USUARIOS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="STATUS_USUARIOS">
+              <PropertyRef Name="CODIGO_STATUS_USUARIOS" />
+            </Principal>
+            <Dependent Role="USUARIOS">
+              <PropertyRef Name="CODIGO_STATUS_USUARIOS" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="QuantumDeskStoreContainer">
+          <EntitySet Name="AGENDAMENTOS" EntityType="Self.AGENDAMENTOS" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ANALISTAS" EntityType="Self.ANALISTAS" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CHAMADOS" EntityType="Self.CHAMADOS" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CLIENTES" EntityType="Self.CLIENTES" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CONTRATOS" EntityType="Self.CONTRATOS" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ESPECIALIDADES" EntityType="Self.ESPECIALIDADES" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="FORMA_PAGAMENTO" EntityType="Self.FORMA_PAGAMENTO" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="OS" EntityType="Self.OS" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SERVICOS" EntityType="Self.SERVICOS" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="STATUS_CHAMADOS" EntityType="Self.STATUS_CHAMADOS" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="STATUS_OS" EntityType="Self.STATUS_OS" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="STATUS_USUARIOS" EntityType="Self.STATUS_USUARIOS" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="USUARIOS" EntityType="Self.USUARIOS" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK__AGENDAMEN__CODIG__45F365D3" Association="Self.FK__AGENDAMEN__CODIG__45F365D3">
+            <End Role="OS" EntitySet="OS" />
+            <End Role="AGENDAMENTOS" EntitySet="AGENDAMENTOS" />
+          </AssociationSet>
+          <AssociationSet Name="FK__ANALISTAS__CODIG__32E0915F" Association="Self.FK__ANALISTAS__CODIG__32E0915F">
+            <End Role="ESPECIALIDADES" EntitySet="ESPECIALIDADES" />
+            <End Role="ANALISTAS" EntitySet="ANALISTAS" />
+          </AssociationSet>
+          <AssociationSet Name="FK__ANALISTAS__ID_US__31EC6D26" Association="Self.FK__ANALISTAS__ID_US__31EC6D26">
+            <End Role="USUARIOS" EntitySet="USUARIOS" />
+            <End Role="ANALISTAS" EntitySet="ANALISTAS" />
+          </AssociationSet>
+          <AssociationSet Name="FK__CHAMADOS__CODIGO__3C69FB99" Association="Self.FK__CHAMADOS__CODIGO__3C69FB99">
+            <End Role="CONTRATOS" EntitySet="CONTRATOS" />
+            <End Role="CHAMADOS" EntitySet="CHAMADOS" />
+          </AssociationSet>
+          <AssociationSet Name="FK__CHAMADOS__CODIGO__3D5E1FD2" Association="Self.FK__CHAMADOS__CODIGO__3D5E1FD2">
+            <End Role="STATUS_CHAMADOS" EntitySet="STATUS_CHAMADOS" />
+            <End Role="CHAMADOS" EntitySet="CHAMADOS" />
+          </AssociationSet>
+          <AssociationSet Name="FK__CLIENTES__CODIGO__36B12243" Association="Self.FK__CLIENTES__CODIGO__36B12243">
+            <End Role="FORMA_PAGAMENTO" EntitySet="FORMA_PAGAMENTO" />
+            <End Role="CLIENTES" EntitySet="CLIENTES" />
+          </AssociationSet>
+          <AssociationSet Name="FK__CLIENTES__ID_USU__35BCFE0A" Association="Self.FK__CLIENTES__ID_USU__35BCFE0A">
+            <End Role="USUARIOS" EntitySet="USUARIOS" />
+            <End Role="CLIENTES" EntitySet="CLIENTES" />
+          </AssociationSet>
+          <AssociationSet Name="FK__CONTRATOS__CODIG__398D8EEE" Association="Self.FK__CONTRATOS__CODIG__398D8EEE">
+            <End Role="CLIENTES" EntitySet="CLIENTES" />
+            <End Role="CONTRATOS" EntitySet="CONTRATOS" />
+          </AssociationSet>
+          <AssociationSet Name="FK__OS__CODIGO_CHAMA__403A8C7D" Association="Self.FK__OS__CODIGO_CHAMA__403A8C7D">
+            <End Role="CHAMADOS" EntitySet="CHAMADOS" />
+            <End Role="OS" EntitySet="OS" />
+          </AssociationSet>
+          <AssociationSet Name="FK__OS__CODIGO_SERVI__4222D4EF" Association="Self.FK__OS__CODIGO_SERVI__4222D4EF">
+            <End Role="SERVICOS" EntitySet="SERVICOS" />
+            <End Role="OS" EntitySet="OS" />
+          </AssociationSet>
+          <AssociationSet Name="FK__OS__CODIGO_STATU__4316F928" Association="Self.FK__OS__CODIGO_STATU__4316F928">
+            <End Role="STATUS_OS" EntitySet="STATUS_OS" />
+            <End Role="OS" EntitySet="OS" />
+          </AssociationSet>
+          <AssociationSet Name="FK__OS__MATRICULA_AN__412EB0B6" Association="Self.FK__OS__MATRICULA_AN__412EB0B6">
+            <End Role="ANALISTAS" EntitySet="ANALISTAS" />
+            <End Role="OS" EntitySet="OS" />
+          </AssociationSet>
+          <AssociationSet Name="FK__USUARIOS__CODIGO__2F10007B" Association="Self.FK__USUARIOS__CODIGO__2F10007B">
+            <End Role="STATUS_USUARIOS" EntitySet="STATUS_USUARIOS" />
+            <End Role="USUARIOS" EntitySet="USUARIOS" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="QuantumDesk" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="AGENDAMENTOS">
+          <Key>
+            <PropertyRef Name="CODIGO_AGENDAMENTO" />
+          </Key>
+          <Property Name="CODIGO_AGENDAMENTO" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CODIGO_OS" Type="Int32" />
+          <Property Name="DATA_AGENDAMENTO" Type="DateTime" Precision="0" />
+          <Property Name="DESCRICAO_AGENDAMENTO" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="OS" Relationship="Self.FK__AGENDAMEN__CODIG__45F365D3" FromRole="AGENDAMENTOS" ToRole="OS" />
+        </EntityType>
+        <EntityType Name="ANALISTAS">
+          <Key>
+            <PropertyRef Name="MATRICULA_ANALISTA" />
+          </Key>
+          <Property Name="MATRICULA_ANALISTA" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ID_USUARIO" Type="Int32" />
+          <Property Name="GERENTE" Type="Int32" />
+          <Property Name="CARGA_HORARIA" Type="Int32" />
+          <Property Name="CODIGO_ESPECIALIDADE" Type="Int32" />
+          <NavigationProperty Name="ESPECIALIDADES" Relationship="Self.FK__ANALISTAS__CODIG__32E0915F" FromRole="ANALISTAS" ToRole="ESPECIALIDADES" />
+          <NavigationProperty Name="USUARIOS" Relationship="Self.FK__ANALISTAS__ID_US__31EC6D26" FromRole="ANALISTAS" ToRole="USUARIOS" />
+          <NavigationProperty Name="OS" Relationship="Self.FK__OS__MATRICULA_AN__412EB0B6" FromRole="ANALISTAS" ToRole="OS" />
+        </EntityType>
+        <EntityType Name="CHAMADOS">
+          <Key>
+            <PropertyRef Name="CODIGO_CHAMADO" />
+          </Key>
+          <Property Name="CODIGO_CHAMADO" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CODIGO_CONTRATO" Type="Int32" />
+          <Property Name="DATA_ABERTURA_CHAMADO" Type="DateTime" Precision="0" />
+          <Property Name="DATA_TERMINO_CHAMADO" Type="DateTime" Precision="0" />
+          <Property Name="CODIGO_STATUS_CHAMADOS" Type="Int32" />
+          <Property Name="DESCRICAO_CHAMADO" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="CONTRATOS" Relationship="Self.FK__CHAMADOS__CODIGO__3C69FB99" FromRole="CHAMADOS" ToRole="CONTRATOS" />
+          <NavigationProperty Name="STATUS_CHAMADOS" Relationship="Self.FK__CHAMADOS__CODIGO__3D5E1FD2" FromRole="CHAMADOS" ToRole="STATUS_CHAMADOS" />
+          <NavigationProperty Name="OS" Relationship="Self.FK__OS__CODIGO_CHAMA__403A8C7D" FromRole="CHAMADOS" ToRole="OS" />
+        </EntityType>
+        <EntityType Name="CLIENTES">
+          <Key>
+            <PropertyRef Name="CODIGO_CLIENTE" />
+          </Key>
+          <Property Name="CODIGO_CLIENTE" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ID_USUARIO" Type="Int32" />
+          <Property Name="RESPONSAVEL" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="CODIGO_FORMA_PAGAMENTO" Type="Int32" />
+          <Property Name="DIA_PAGAMENTO" Type="Int32" />
+          <NavigationProperty Name="FORMA_PAGAMENTO" Relationship="Self.FK__CLIENTES__CODIGO__36B12243" FromRole="CLIENTES" ToRole="FORMA_PAGAMENTO" />
+          <NavigationProperty Name="USUARIOS" Relationship="Self.FK__CLIENTES__ID_USU__35BCFE0A" FromRole="CLIENTES" ToRole="USUARIOS" />
+          <NavigationProperty Name="CONTRATOS" Relationship="Self.FK__CONTRATOS__CODIG__398D8EEE" FromRole="CLIENTES" ToRole="CONTRATOS" />
+        </EntityType>
+        <EntityType Name="CONTRATOS">
+          <Key>
+            <PropertyRef Name="CODIGO_CONTRATO" />
+          </Key>
+          <Property Name="CODIGO_CONTRATO" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CODIGO_CLIENTE" Type="Int32" />
+          <Property Name="INICIO_CONTRATO" Type="DateTime" Precision="0" />
+          <Property Name="FIM_CONTRATO" Type="DateTime" Precision="0" />
+          <NavigationProperty Name="CHAMADOS" Relationship="Self.FK__CHAMADOS__CODIGO__3C69FB99" FromRole="CONTRATOS" ToRole="CHAMADOS" />
+          <NavigationProperty Name="CLIENTES" Relationship="Self.FK__CONTRATOS__CODIG__398D8EEE" FromRole="CONTRATOS" ToRole="CLIENTES" />
+        </EntityType>
+        <EntityType Name="ESPECIALIDADES">
+          <Key>
+            <PropertyRef Name="CODIGO_ESPECIALIDADE" />
+          </Key>
+          <Property Name="CODIGO_ESPECIALIDADE" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DESCRICAO_ESPECIALIDADE" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="ANALISTAS" Relationship="Self.FK__ANALISTAS__CODIG__32E0915F" FromRole="ESPECIALIDADES" ToRole="ANALISTAS" />
+        </EntityType>
+        <EntityType Name="FORMA_PAGAMENTO">
+          <Key>
+            <PropertyRef Name="CODIGO_FORMA_PAGAMENTO" />
+          </Key>
+          <Property Name="CODIGO_FORMA_PAGAMENTO" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DESCRICAO_FORMA_PAGAMENTO" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="CLIENTES" Relationship="Self.FK__CLIENTES__CODIGO__36B12243" FromRole="FORMA_PAGAMENTO" ToRole="CLIENTES" />
+        </EntityType>
+        <EntityType Name="OS">
+          <Key>
+            <PropertyRef Name="CODIGO_OS" />
+          </Key>
+          <Property Name="CODIGO_OS" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CODIGO_CHAMADO" Type="Int32" />
+          <Property Name="DATA_ABERTURA_OS" Type="DateTime" Precision="0" />
+          <Property Name="DATA_TERMINO_OS" Type="DateTime" Precision="0" />
+          <Property Name="CODIGO_STATUS_OS" Type="Int32" />
+          <Property Name="MATRICULA_ANALISTA" Type="Int32" />
+          <Property Name="PRIORIDADE" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="CODIGO_SERVICO" Type="Int32" />
+          <Property Name="DESCRICAO_OS" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="AGENDAMENTOS" Relationship="Self.FK__AGENDAMEN__CODIG__45F365D3" FromRole="OS" ToRole="AGENDAMENTOS" />
+          <NavigationProperty Name="ANALISTAS" Relationship="Self.FK__OS__MATRICULA_AN__412EB0B6" FromRole="OS" ToRole="ANALISTAS" />
+          <NavigationProperty Name="CHAMADOS" Relationship="Self.FK__OS__CODIGO_CHAMA__403A8C7D" FromRole="OS" ToRole="CHAMADOS" />
+          <NavigationProperty Name="SERVICOS" Relationship="Self.FK__OS__CODIGO_SERVI__4222D4EF" FromRole="OS" ToRole="SERVICOS" />
+          <NavigationProperty Name="STATUS_OS" Relationship="Self.FK__OS__CODIGO_STATU__4316F928" FromRole="OS" ToRole="STATUS_OS" />
+        </EntityType>
+        <EntityType Name="SERVICOS">
+          <Key>
+            <PropertyRef Name="CODIGO_SERVICO" />
+          </Key>
+          <Property Name="CODIGO_SERVICO" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DESCRICAO_SERVICO" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="OS" Relationship="Self.FK__OS__CODIGO_SERVI__4222D4EF" FromRole="SERVICOS" ToRole="OS" />
+        </EntityType>
+        <EntityType Name="STATUS_CHAMADOS">
+          <Key>
+            <PropertyRef Name="CODIGO_STATUS_CHAMADOS" />
+          </Key>
+          <Property Name="CODIGO_STATUS_CHAMADOS" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DESCRICAO_STATUS_CHAMADOS" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="CHAMADOS" Relationship="Self.FK__CHAMADOS__CODIGO__3D5E1FD2" FromRole="STATUS_CHAMADOS" ToRole="CHAMADOS" />
+        </EntityType>
+        <EntityType Name="STATUS_OS">
+          <Key>
+            <PropertyRef Name="CODIGO_STATUS_OS" />
+          </Key>
+          <Property Name="CODIGO_STATUS_OS" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DESCRICAO_STATUS_OS" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="OS" Relationship="Self.FK__OS__CODIGO_STATU__4316F928" FromRole="STATUS_OS" ToRole="OS" />
+        </EntityType>
+        <EntityType Name="STATUS_USUARIOS">
+          <Key>
+            <PropertyRef Name="CODIGO_STATUS_USUARIOS" />
+          </Key>
+          <Property Name="CODIGO_STATUS_USUARIOS" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DESCRICAO_STATUS_USUARIOS" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="USUARIOS" Relationship="Self.FK__USUARIOS__CODIGO__2F10007B" FromRole="STATUS_USUARIOS" ToRole="USUARIOS" />
+        </EntityType>
+        <EntityType Name="USUARIOS">
+          <Key>
+            <PropertyRef Name="ID_USUARIO" />
+          </Key>
+          <Property Name="ID_USUARIO" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CPF_CNPJ" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="NOME_RAZAOSOCIAL" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="CODIGO_STATUS_USUARIOS" Type="Int32" />
+          <Property Name="ENDERECO" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="TELEFONE" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="EMAIL" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="SENHA" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="TIPO" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="ANALISTAS" Relationship="Self.FK__ANALISTAS__ID_US__31EC6D26" FromRole="USUARIOS" ToRole="ANALISTAS" />
+          <NavigationProperty Name="CLIENTES" Relationship="Self.FK__CLIENTES__ID_USU__35BCFE0A" FromRole="USUARIOS" ToRole="CLIENTES" />
+          <NavigationProperty Name="STATUS_USUARIOS" Relationship="Self.FK__USUARIOS__CODIGO__2F10007B" FromRole="USUARIOS" ToRole="STATUS_USUARIOS" />
+        </EntityType>
+        <Association Name="FK__AGENDAMEN__CODIG__45F365D3">
+          <End Role="OS" Type="Self.OS" Multiplicity="0..1" />
+          <End Role="AGENDAMENTOS" Type="Self.AGENDAMENTOS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="OS">
+              <PropertyRef Name="CODIGO_OS" />
+            </Principal>
+            <Dependent Role="AGENDAMENTOS">
+              <PropertyRef Name="CODIGO_OS" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__ANALISTAS__CODIG__32E0915F">
+          <End Role="ESPECIALIDADES" Type="Self.ESPECIALIDADES" Multiplicity="0..1" />
+          <End Role="ANALISTAS" Type="Self.ANALISTAS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ESPECIALIDADES">
+              <PropertyRef Name="CODIGO_ESPECIALIDADE" />
+            </Principal>
+            <Dependent Role="ANALISTAS">
+              <PropertyRef Name="CODIGO_ESPECIALIDADE" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__ANALISTAS__ID_US__31EC6D26">
+          <End Role="USUARIOS" Type="Self.USUARIOS" Multiplicity="0..1" />
+          <End Role="ANALISTAS" Type="Self.ANALISTAS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="USUARIOS">
+              <PropertyRef Name="ID_USUARIO" />
+            </Principal>
+            <Dependent Role="ANALISTAS">
+              <PropertyRef Name="ID_USUARIO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__OS__MATRICULA_AN__412EB0B6">
+          <End Role="ANALISTAS" Type="Self.ANALISTAS" Multiplicity="0..1" />
+          <End Role="OS" Type="Self.OS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ANALISTAS">
+              <PropertyRef Name="MATRICULA_ANALISTA" />
+            </Principal>
+            <Dependent Role="OS">
+              <PropertyRef Name="MATRICULA_ANALISTA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__CHAMADOS__CODIGO__3C69FB99">
+          <End Role="CONTRATOS" Type="Self.CONTRATOS" Multiplicity="0..1" />
+          <End Role="CHAMADOS" Type="Self.CHAMADOS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CONTRATOS">
+              <PropertyRef Name="CODIGO_CONTRATO" />
+            </Principal>
+            <Dependent Role="CHAMADOS">
+              <PropertyRef Name="CODIGO_CONTRATO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__CHAMADOS__CODIGO__3D5E1FD2">
+          <End Role="STATUS_CHAMADOS" Type="Self.STATUS_CHAMADOS" Multiplicity="0..1" />
+          <End Role="CHAMADOS" Type="Self.CHAMADOS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="STATUS_CHAMADOS">
+              <PropertyRef Name="CODIGO_STATUS_CHAMADOS" />
+            </Principal>
+            <Dependent Role="CHAMADOS">
+              <PropertyRef Name="CODIGO_STATUS_CHAMADOS" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__OS__CODIGO_CHAMA__403A8C7D">
+          <End Role="CHAMADOS" Type="Self.CHAMADOS" Multiplicity="0..1" />
+          <End Role="OS" Type="Self.OS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CHAMADOS">
+              <PropertyRef Name="CODIGO_CHAMADO" />
+            </Principal>
+            <Dependent Role="OS">
+              <PropertyRef Name="CODIGO_CHAMADO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__CLIENTES__CODIGO__36B12243">
+          <End Role="FORMA_PAGAMENTO" Type="Self.FORMA_PAGAMENTO" Multiplicity="0..1" />
+          <End Role="CLIENTES" Type="Self.CLIENTES" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FORMA_PAGAMENTO">
+              <PropertyRef Name="CODIGO_FORMA_PAGAMENTO" />
+            </Principal>
+            <Dependent Role="CLIENTES">
+              <PropertyRef Name="CODIGO_FORMA_PAGAMENTO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__CLIENTES__ID_USU__35BCFE0A">
+          <End Role="USUARIOS" Type="Self.USUARIOS" Multiplicity="0..1" />
+          <End Role="CLIENTES" Type="Self.CLIENTES" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="USUARIOS">
+              <PropertyRef Name="ID_USUARIO" />
+            </Principal>
+            <Dependent Role="CLIENTES">
+              <PropertyRef Name="ID_USUARIO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__CONTRATOS__CODIG__398D8EEE">
+          <End Role="CLIENTES" Type="Self.CLIENTES" Multiplicity="0..1" />
+          <End Role="CONTRATOS" Type="Self.CONTRATOS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CLIENTES">
+              <PropertyRef Name="CODIGO_CLIENTE" />
+            </Principal>
+            <Dependent Role="CONTRATOS">
+              <PropertyRef Name="CODIGO_CLIENTE" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__OS__CODIGO_SERVI__4222D4EF">
+          <End Role="SERVICOS" Type="Self.SERVICOS" Multiplicity="0..1" />
+          <End Role="OS" Type="Self.OS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SERVICOS">
+              <PropertyRef Name="CODIGO_SERVICO" />
+            </Principal>
+            <Dependent Role="OS">
+              <PropertyRef Name="CODIGO_SERVICO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__OS__CODIGO_STATU__4316F928">
+          <End Role="STATUS_OS" Type="Self.STATUS_OS" Multiplicity="0..1" />
+          <End Role="OS" Type="Self.OS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="STATUS_OS">
+              <PropertyRef Name="CODIGO_STATUS_OS" />
+            </Principal>
+            <Dependent Role="OS">
+              <PropertyRef Name="CODIGO_STATUS_OS" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__USUARIOS__CODIGO__2F10007B">
+          <End Role="STATUS_USUARIOS" Type="Self.STATUS_USUARIOS" Multiplicity="0..1" />
+          <End Role="USUARIOS" Type="Self.USUARIOS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="STATUS_USUARIOS">
+              <PropertyRef Name="CODIGO_STATUS_USUARIOS" />
+            </Principal>
+            <Dependent Role="USUARIOS">
+              <PropertyRef Name="CODIGO_STATUS_USUARIOS" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="QuantumContext" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="AGENDAMENTOS" EntityType="Self.AGENDAMENTOS" />
+          <EntitySet Name="ANALISTAS" EntityType="Self.ANALISTAS" />
+          <EntitySet Name="CHAMADOS" EntityType="Self.CHAMADOS" />
+          <EntitySet Name="CLIENTES" EntityType="Self.CLIENTES" />
+          <EntitySet Name="CONTRATOS" EntityType="Self.CONTRATOS" />
+          <EntitySet Name="ESPECIALIDADES" EntityType="Self.ESPECIALIDADES" />
+          <EntitySet Name="FORMA_PAGAMENTO" EntityType="Self.FORMA_PAGAMENTO" />
+          <EntitySet Name="OS" EntityType="Self.OS" />
+          <EntitySet Name="SERVICOS" EntityType="Self.SERVICOS" />
+          <EntitySet Name="STATUS_CHAMADOS" EntityType="Self.STATUS_CHAMADOS" />
+          <EntitySet Name="STATUS_OS" EntityType="Self.STATUS_OS" />
+          <EntitySet Name="STATUS_USUARIOS" EntityType="Self.STATUS_USUARIOS" />
+          <EntitySet Name="USUARIOS" EntityType="Self.USUARIOS" />
+          <AssociationSet Name="FK__AGENDAMEN__CODIG__45F365D3" Association="Self.FK__AGENDAMEN__CODIG__45F365D3">
+            <End Role="OS" EntitySet="OS" />
+            <End Role="AGENDAMENTOS" EntitySet="AGENDAMENTOS" />
+          </AssociationSet>
+          <AssociationSet Name="FK__ANALISTAS__CODIG__32E0915F" Association="Self.FK__ANALISTAS__CODIG__32E0915F">
+            <End Role="ESPECIALIDADES" EntitySet="ESPECIALIDADES" />
+            <End Role="ANALISTAS" EntitySet="ANALISTAS" />
+          </AssociationSet>
+          <AssociationSet Name="FK__ANALISTAS__ID_US__31EC6D26" Association="Self.FK__ANALISTAS__ID_US__31EC6D26">
+            <End Role="USUARIOS" EntitySet="USUARIOS" />
+            <End Role="ANALISTAS" EntitySet="ANALISTAS" />
+          </AssociationSet>
+          <AssociationSet Name="FK__OS__MATRICULA_AN__412EB0B6" Association="Self.FK__OS__MATRICULA_AN__412EB0B6">
+            <End Role="ANALISTAS" EntitySet="ANALISTAS" />
+            <End Role="OS" EntitySet="OS" />
+          </AssociationSet>
+          <AssociationSet Name="FK__CHAMADOS__CODIGO__3C69FB99" Association="Self.FK__CHAMADOS__CODIGO__3C69FB99">
+            <End Role="CONTRATOS" EntitySet="CONTRATOS" />
+            <End Role="CHAMADOS" EntitySet="CHAMADOS" />
+          </AssociationSet>
+          <AssociationSet Name="FK__CHAMADOS__CODIGO__3D5E1FD2" Association="Self.FK__CHAMADOS__CODIGO__3D5E1FD2">
+            <End Role="STATUS_CHAMADOS" EntitySet="STATUS_CHAMADOS" />
+            <End Role="CHAMADOS" EntitySet="CHAMADOS" />
+          </AssociationSet>
+          <AssociationSet Name="FK__OS__CODIGO_CHAMA__403A8C7D" Association="Self.FK__OS__CODIGO_CHAMA__403A8C7D">
+            <End Role="CHAMADOS" EntitySet="CHAMADOS" />
+            <End Role="OS" EntitySet="OS" />
+          </AssociationSet>
+          <AssociationSet Name="FK__CLIENTES__CODIGO__36B12243" Association="Self.FK__CLIENTES__CODIGO__36B12243">
+            <End Role="FORMA_PAGAMENTO" EntitySet="FORMA_PAGAMENTO" />
+            <End Role="CLIENTES" EntitySet="CLIENTES" />
+          </AssociationSet>
+          <AssociationSet Name="FK__CLIENTES__ID_USU__35BCFE0A" Association="Self.FK__CLIENTES__ID_USU__35BCFE0A">
+            <End Role="USUARIOS" EntitySet="USUARIOS" />
+            <End Role="CLIENTES" EntitySet="CLIENTES" />
+          </AssociationSet>
+          <AssociationSet Name="FK__CONTRATOS__CODIG__398D8EEE" Association="Self.FK__CONTRATOS__CODIG__398D8EEE">
+            <End Role="CLIENTES" EntitySet="CLIENTES" />
+            <End Role="CONTRATOS" EntitySet="CONTRATOS" />
+          </AssociationSet>
+          <AssociationSet Name="FK__OS__CODIGO_SERVI__4222D4EF" Association="Self.FK__OS__CODIGO_SERVI__4222D4EF">
+            <End Role="SERVICOS" EntitySet="SERVICOS" />
+            <End Role="OS" EntitySet="OS" />
+          </AssociationSet>
+          <AssociationSet Name="FK__OS__CODIGO_STATU__4316F928" Association="Self.FK__OS__CODIGO_STATU__4316F928">
+            <End Role="STATUS_OS" EntitySet="STATUS_OS" />
+            <End Role="OS" EntitySet="OS" />
+          </AssociationSet>
+          <AssociationSet Name="FK__USUARIOS__CODIGO__2F10007B" Association="Self.FK__USUARIOS__CODIGO__2F10007B">
+            <End Role="STATUS_USUARIOS" EntitySet="STATUS_USUARIOS" />
+            <End Role="USUARIOS" EntitySet="USUARIOS" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="QuantumDeskStoreContainer" CdmEntityContainer="QuantumContext">
+          <EntitySetMapping Name="AGENDAMENTOS">
+            <EntityTypeMapping TypeName="QuantumDesk.AGENDAMENTOS">
+              <MappingFragment StoreEntitySet="AGENDAMENTOS">
+                <ScalarProperty Name="CODIGO_AGENDAMENTO" ColumnName="CODIGO_AGENDAMENTO" />
+                <ScalarProperty Name="CODIGO_OS" ColumnName="CODIGO_OS" />
+                <ScalarProperty Name="DATA_AGENDAMENTO" ColumnName="DATA_AGENDAMENTO" />
+                <ScalarProperty Name="DESCRICAO_AGENDAMENTO" ColumnName="DESCRICAO_AGENDAMENTO" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ANALISTAS">
+            <EntityTypeMapping TypeName="QuantumDesk.ANALISTAS">
+              <MappingFragment StoreEntitySet="ANALISTAS">
+                <ScalarProperty Name="MATRICULA_ANALISTA" ColumnName="MATRICULA_ANALISTA" />
+                <ScalarProperty Name="ID_USUARIO" ColumnName="ID_USUARIO" />
+                <ScalarProperty Name="GERENTE" ColumnName="GERENTE" />
+                <ScalarProperty Name="CARGA_HORARIA" ColumnName="CARGA_HORARIA" />
+                <ScalarProperty Name="CODIGO_ESPECIALIDADE" ColumnName="CODIGO_ESPECIALIDADE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CHAMADOS">
+            <EntityTypeMapping TypeName="QuantumDesk.CHAMADOS">
+              <MappingFragment StoreEntitySet="CHAMADOS">
+                <ScalarProperty Name="CODIGO_CHAMADO" ColumnName="CODIGO_CHAMADO" />
+                <ScalarProperty Name="CODIGO_CONTRATO" ColumnName="CODIGO_CONTRATO" />
+                <ScalarProperty Name="DATA_ABERTURA_CHAMADO" ColumnName="DATA_ABERTURA_CHAMADO" />
+                <ScalarProperty Name="DATA_TERMINO_CHAMADO" ColumnName="DATA_TERMINO_CHAMADO" />
+                <ScalarProperty Name="CODIGO_STATUS_CHAMADOS" ColumnName="CODIGO_STATUS_CHAMADOS" />
+                <ScalarProperty Name="DESCRICAO_CHAMADO" ColumnName="DESCRICAO_CHAMADO" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CLIENTES">
+            <EntityTypeMapping TypeName="QuantumDesk.CLIENTES">
+              <MappingFragment StoreEntitySet="CLIENTES">
+                <ScalarProperty Name="CODIGO_CLIENTE" ColumnName="CODIGO_CLIENTE" />
+                <ScalarProperty Name="ID_USUARIO" ColumnName="ID_USUARIO" />
+                <ScalarProperty Name="RESPONSAVEL" ColumnName="RESPONSAVEL" />
+                <ScalarProperty Name="CODIGO_FORMA_PAGAMENTO" ColumnName="CODIGO_FORMA_PAGAMENTO" />
+                <ScalarProperty Name="DIA_PAGAMENTO" ColumnName="DIA_PAGAMENTO" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CONTRATOS">
+            <EntityTypeMapping TypeName="QuantumDesk.CONTRATOS">
+              <MappingFragment StoreEntitySet="CONTRATOS">
+                <ScalarProperty Name="CODIGO_CONTRATO" ColumnName="CODIGO_CONTRATO" />
+                <ScalarProperty Name="CODIGO_CLIENTE" ColumnName="CODIGO_CLIENTE" />
+                <ScalarProperty Name="INICIO_CONTRATO" ColumnName="INICIO_CONTRATO" />
+                <ScalarProperty Name="FIM_CONTRATO" ColumnName="FIM_CONTRATO" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ESPECIALIDADES">
+            <EntityTypeMapping TypeName="QuantumDesk.ESPECIALIDADES">
+              <MappingFragment StoreEntitySet="ESPECIALIDADES">
+                <ScalarProperty Name="CODIGO_ESPECIALIDADE" ColumnName="CODIGO_ESPECIALIDADE" />
+                <ScalarProperty Name="DESCRICAO_ESPECIALIDADE" ColumnName="DESCRICAO_ESPECIALIDADE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="FORMA_PAGAMENTO">
+            <EntityTypeMapping TypeName="QuantumDesk.FORMA_PAGAMENTO">
+              <MappingFragment StoreEntitySet="FORMA_PAGAMENTO">
+                <ScalarProperty Name="CODIGO_FORMA_PAGAMENTO" ColumnName="CODIGO_FORMA_PAGAMENTO" />
+                <ScalarProperty Name="DESCRICAO_FORMA_PAGAMENTO" ColumnName="DESCRICAO_FORMA_PAGAMENTO" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="OS">
+            <EntityTypeMapping TypeName="QuantumDesk.OS">
+              <MappingFragment StoreEntitySet="OS">
+                <ScalarProperty Name="CODIGO_OS" ColumnName="CODIGO_OS" />
+                <ScalarProperty Name="CODIGO_CHAMADO" ColumnName="CODIGO_CHAMADO" />
+                <ScalarProperty Name="DATA_ABERTURA_OS" ColumnName="DATA_ABERTURA_OS" />
+                <ScalarProperty Name="DATA_TERMINO_OS" ColumnName="DATA_TERMINO_OS" />
+                <ScalarProperty Name="CODIGO_STATUS_OS" ColumnName="CODIGO_STATUS_OS" />
+                <ScalarProperty Name="MATRICULA_ANALISTA" ColumnName="MATRICULA_ANALISTA" />
+                <ScalarProperty Name="PRIORIDADE" ColumnName="PRIORIDADE" />
+                <ScalarProperty Name="CODIGO_SERVICO" ColumnName="CODIGO_SERVICO" />
+                <ScalarProperty Name="DESCRICAO_OS" ColumnName="DESCRICAO_OS" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SERVICOS">
+            <EntityTypeMapping TypeName="QuantumDesk.SERVICOS">
+              <MappingFragment StoreEntitySet="SERVICOS">
+                <ScalarProperty Name="CODIGO_SERVICO" ColumnName="CODIGO_SERVICO" />
+                <ScalarProperty Name="DESCRICAO_SERVICO" ColumnName="DESCRICAO_SERVICO" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="STATUS_CHAMADOS">
+            <EntityTypeMapping TypeName="QuantumDesk.STATUS_CHAMADOS">
+              <MappingFragment StoreEntitySet="STATUS_CHAMADOS">
+                <ScalarProperty Name="CODIGO_STATUS_CHAMADOS" ColumnName="CODIGO_STATUS_CHAMADOS" />
+                <ScalarProperty Name="DESCRICAO_STATUS_CHAMADOS" ColumnName="DESCRICAO_STATUS_CHAMADOS" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="STATUS_OS">
+            <EntityTypeMapping TypeName="QuantumDesk.STATUS_OS">
+              <MappingFragment StoreEntitySet="STATUS_OS">
+                <ScalarProperty Name="CODIGO_STATUS_OS" ColumnName="CODIGO_STATUS_OS" />
+                <ScalarProperty Name="DESCRICAO_STATUS_OS" ColumnName="DESCRICAO_STATUS_OS" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="STATUS_USUARIOS">
+            <EntityTypeMapping TypeName="QuantumDesk.STATUS_USUARIOS">
+              <MappingFragment StoreEntitySet="STATUS_USUARIOS">
+                <ScalarProperty Name="CODIGO_STATUS_USUARIOS" ColumnName="CODIGO_STATUS_USUARIOS" />
+                <ScalarProperty Name="DESCRICAO_STATUS_USUARIOS" ColumnName="DESCRICAO_STATUS_USUARIOS" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="USUARIOS">
+            <EntityTypeMapping TypeName="QuantumDesk.USUARIOS">
+              <MappingFragment StoreEntitySet="USUARIOS">
+                <ScalarProperty Name="ID_USUARIO" ColumnName="ID_USUARIO" />
+                <ScalarProperty Name="CPF_CNPJ" ColumnName="CPF_CNPJ" />
+                <ScalarProperty Name="NOME_RAZAOSOCIAL" ColumnName="NOME_RAZAOSOCIAL" />
+                <ScalarProperty Name="CODIGO_STATUS_USUARIOS" ColumnName="CODIGO_STATUS_USUARIOS" />
+                <ScalarProperty Name="ENDERECO" ColumnName="ENDERECO" />
+                <ScalarProperty Name="TELEFONE" ColumnName="TELEFONE" />
+                <ScalarProperty Name="EMAIL" ColumnName="EMAIL" />
+                <ScalarProperty Name="SENHA" ColumnName="SENHA" />
+                <ScalarProperty Name="TIPO" ColumnName="TIPO" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
