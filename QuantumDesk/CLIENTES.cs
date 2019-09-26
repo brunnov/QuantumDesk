@@ -11,7 +11,8 @@ namespace QuantumDesk
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class CLIENTES
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -19,13 +20,17 @@ namespace QuantumDesk
         {
             this.CONTRATOS = new HashSet<CONTRATOS>();
         }
-    
+        [Display(Name = "Status:")]
         public int CODIGO_CLIENTE { get; set; }
         public Nullable<int> ID_USUARIO { get; set; }
+        [Display(Name = "Responsável:")]
         public string RESPONSAVEL { get; set; }
+        [Display(Name = "Forma de Pagamento:")]
         public Nullable<int> CODIGO_FORMA_PAGAMENTO { get; set; }
+        [Display(Name = "Dia do Pagamento:")]
         public Nullable<int> DIA_PAGAMENTO { get; set; }
-    
+
+        [Display(Name = "Forma de Pagamento:")]
         public virtual FORMA_PAGAMENTO FORMA_PAGAMENTO { get; set; }
         public virtual USUARIOS USUARIOS { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

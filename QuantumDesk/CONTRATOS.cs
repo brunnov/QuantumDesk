@@ -11,7 +11,8 @@ namespace QuantumDesk
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class CONTRATOS
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -19,10 +20,14 @@ namespace QuantumDesk
         {
             this.CHAMADOS = new HashSet<CHAMADOS>();
         }
-    
+
+        [Display(Name = "Código do Contrato:")]
         public int CODIGO_CONTRATO { get; set; }
         public Nullable<int> CODIGO_CLIENTE { get; set; }
+        [Display(Name = "Data Inicial do Contrato:")]
         public Nullable<System.DateTime> INICIO_CONTRATO { get; set; }
+
+        [Display(Name = "Data Final do Contrato:")]
         public Nullable<System.DateTime> FIM_CONTRATO { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

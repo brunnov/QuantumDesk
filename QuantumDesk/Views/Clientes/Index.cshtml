@@ -4,10 +4,10 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<h2>Clientes</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Cadastrar Cliente", "Create")
 </p>
 <table class="table">
     <tr>
@@ -21,7 +21,7 @@
             @Html.DisplayNameFor(model => model.FORMA_PAGAMENTO.DESCRICAO_FORMA_PAGAMENTO)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.USUARIOS.CPF_CNPJ)
+            CPF / CNPJ
         </th>
         <th></th>
     </tr>
@@ -41,9 +41,9 @@
             @Html.DisplayFor(modelItem => item.USUARIOS.CPF_CNPJ)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.CODIGO_CLIENTE }) |
-            @Html.ActionLink("Details", "Details", new { id=item.CODIGO_CLIENTE }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.CODIGO_CLIENTE })
+            @Html.ActionLink("Editar", "Edit", new { id=item.CODIGO_CLIENTE }) |
+            @Html.ActionLink("Detalhes", "Details", new { id=item.CODIGO_CLIENTE }) |
+            @Html.ActionLink("Deletar", "Delete", new { id=item.CODIGO_CLIENTE })
         </td>
     </tr>
 }

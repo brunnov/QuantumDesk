@@ -11,7 +11,8 @@ namespace QuantumDesk
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class CHAMADOS
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -19,12 +20,26 @@ namespace QuantumDesk
         {
             this.OS = new HashSet<OS>();
         }
-    
+
+        [Display(Name = "Codigo do Chamado:")]
         public int CODIGO_CHAMADO { get; set; }
+
+        [Display(Name = "Codigo do Contrato:")]
         public Nullable<int> CODIGO_CONTRATO { get; set; }
+
+
+
+        [Display(Name = "Data de Abertura do Chamado:")]//C:\QuantumDesk\QuantumDesk\Controllers\
         public Nullable<System.DateTime> DATA_ABERTURA_CHAMADO { get; set; }
+
+
+        [Display(Name = "Data de Termindo do Chamado:")]
         public Nullable<System.DateTime> DATA_TERMINO_CHAMADO { get; set; }
+
+        [Display(Name = "Status do Chamado:")]
         public Nullable<int> CODIGO_STATUS_CHAMADOS { get; set; }
+
+        [Display(Name = "Descrição:")]
         public string DESCRICAO_CHAMADO { get; set; }
     
         public virtual CONTRATOS CONTRATOS { get; set; }

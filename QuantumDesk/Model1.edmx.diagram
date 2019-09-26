@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="4c070d986f2e4c7e8440882de980a8cf" Name="Diagram1">
+        <EntityTypeShape EntityType="PROJETOQUANTUMModel.AGENDAMENTOS" Width="1.5" PointX="12" PointY="2" IsExpanded="true" />
+        <EntityTypeShape EntityType="PROJETOQUANTUMModel.ANALISTAS" Width="1.5" PointX="7.5" PointY="9.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="PROJETOQUANTUMModel.CHAMADOS" Width="1.5" PointX="7.5" PointY="1.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="PROJETOQUANTUMModel.CLIENTES" Width="1.5" PointX="3" PointY="1.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PROJETOQUANTUMModel.CONTRATOS" Width="1.5" PointX="5.25" PointY="1.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="PROJETOQUANTUMModel.ESPECIALIDADES" Width="1.5" PointX="5.25" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PROJETOQUANTUMModel.FORMA_PAGAMENTO" Width="1.5" PointX="0.75" PointY="2.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="PROJETOQUANTUMModel.OS" Width="1.5" PointX="9.75" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="PROJETOQUANTUMModel.PRIORIDADES" Width="1.5" PointX="7.5" PointY="6.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="PROJETOQUANTUMModel.SERVICOS" Width="1.5" PointX="7.5" PointY="12.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="PROJETOQUANTUMModel.STATUS_CHAMADOS" Width="1.5" PointX="5.25" PointY="6.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="PROJETOQUANTUMModel.STATUS_OS" Width="1.5" PointX="7.5" PointY="15.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="PROJETOQUANTUMModel.STATUS_USUARIOS" Width="1.5" PointX="1.5" PointY="10.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="PROJETOQUANTUMModel.USUARIOS" Width="1.5" PointX="0.75" PointY="5.25" IsExpanded="true" />
+        <AssociationConnector Association="PROJETOQUANTUMModel.FK__AGENDAMEN__CODIG__31D75E8D" ManuallyRouted="false" />
+        <AssociationConnector Association="PROJETOQUANTUMModel.FK__ANALISTAS__CODIG__1DD065E0" ManuallyRouted="false" />
+        <AssociationConnector Association="PROJETOQUANTUMModel.FK__ANALISTAS__ID_US__1CDC41A7" ManuallyRouted="false" />
+        <AssociationConnector Association="PROJETOQUANTUMModel.FK__OS__MATRICULA_AN__2C1E8537" ManuallyRouted="false" />
+        <AssociationConnector Association="PROJETOQUANTUMModel.FK__CHAMADOS__CODIGO__2759D01A" ManuallyRouted="false" />
+        <AssociationConnector Association="PROJETOQUANTUMModel.FK__CHAMADOS__CODIGO__284DF453" ManuallyRouted="false" />
+        <AssociationConnector Association="PROJETOQUANTUMModel.FK__OS__CODIGO_CHAMA__2B2A60FE" ManuallyRouted="false" />
+        <AssociationConnector Association="PROJETOQUANTUMModel.FK__CLIENTES__CODIGO__21A0F6C4" ManuallyRouted="false" />
+        <AssociationConnector Association="PROJETOQUANTUMModel.FK__CLIENTES__ID_USU__20ACD28B" ManuallyRouted="false" />
+        <AssociationConnector Association="PROJETOQUANTUMModel.FK__CONTRATOS__CODIG__247D636F" ManuallyRouted="false" />
+        <AssociationConnector Association="PROJETOQUANTUMModel.FK__OS__CODIGO_PRIOR__2EFAF1E2" ManuallyRouted="false" />
+        <AssociationConnector Association="PROJETOQUANTUMModel.FK__OS__CODIGO_SERVI__2D12A970" ManuallyRouted="false" />
+        <AssociationConnector Association="PROJETOQUANTUMModel.FK__OS__CODIGO_STATU__2E06CDA9" ManuallyRouted="false" />
+        <AssociationConnector Association="PROJETOQUANTUMModel.FK__USUARIOS__CODIGO__19FFD4FC" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

@@ -8,6 +8,15 @@ namespace QuantumDesk
         // For more information on bundling, visit https://go.microsoft.com/fwlink/?LinkId=301862
         public static void RegisterBundles(BundleCollection bundles)
         {
+            bundles.Add(new ScriptBundle("~/bundles/jqueryui").Include(
+                "~/Scripts/jquery-ui-1.12.1.js",
+                "~/Scripts/jquery-ui-1.12.1.min.js"));
+
+            bundles.Add(new StyleBundle("~/Content/themes/base/css").Include(
+                "~/Content/themes/base/jquery.ui.core.css",
+                "~/Content/themes/base/jquery.ui.datepicker.css",
+                "~/Content/themes/base/jquery.ui.theme.css"));
+
             bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
                         "~/Scripts/jquery-{version}.js"));
 

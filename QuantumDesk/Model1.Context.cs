@@ -33,6 +33,7 @@ namespace QuantumDesk
         public virtual DbSet<ESPECIALIDADES> ESPECIALIDADES { get; set; }
         public virtual DbSet<FORMA_PAGAMENTO> FORMA_PAGAMENTO { get; set; }
         public virtual DbSet<OS> OS { get; set; }
+        public virtual DbSet<PRIORIDADES> PRIORIDADES { get; set; }
         public virtual DbSet<SERVICOS> SERVICOS { get; set; }
         public virtual DbSet<STATUS_CHAMADOS> STATUS_CHAMADOS { get; set; }
         public virtual DbSet<STATUS_OS> STATUS_OS { get; set; }

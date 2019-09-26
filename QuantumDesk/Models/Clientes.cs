@@ -22,5 +22,6 @@ namespace QuantumDesk.Models
         public string SenhaCliente { get; set; }
 
         public virtual ICollection<Enrollment> Enrollments { get; set; }
+        public virtual ICollection<Contratos> Contratos { get; set; }
     }
 }

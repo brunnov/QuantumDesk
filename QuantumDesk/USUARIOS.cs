@@ -22,6 +22,7 @@ namespace QuantumDesk
         }
     
         public int ID_USUARIO { get; set; }
+
         public string CPF_CNPJ { get; set; }
         public string NOME_RAZAOSOCIAL { get; set; }
         public Nullable<int> CODIGO_STATUS_USUARIOS { get; set; }

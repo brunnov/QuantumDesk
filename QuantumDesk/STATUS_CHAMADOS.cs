@@ -11,7 +11,8 @@ namespace QuantumDesk
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class STATUS_CHAMADOS
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -21,6 +22,7 @@ namespace QuantumDesk
         }
     
         public int CODIGO_STATUS_CHAMADOS { get; set; }
+        [Display(Name = "Status:")]
         public string DESCRICAO_STATUS_CHAMADOS { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

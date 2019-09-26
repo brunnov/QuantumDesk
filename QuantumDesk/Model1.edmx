@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="QuantumDesk.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="PROJETOQUANTUMModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="AGENDAMENTOS">
           <Key>
             <PropertyRef Name="CODIGO_AGENDAMENTO" />
@@ -78,9 +78,16 @@
           <Property Name="DATA_TERMINO_OS" Type="date" />
           <Property Name="CODIGO_STATUS_OS" Type="int" />
           <Property Name="MATRICULA_ANALISTA" Type="int" />
-          <Property Name="PRIORIDADE" Type="varchar" MaxLength="5" />
+          <Property Name="CODIGO_PRIORIDADE" Type="int" />
           <Property Name="CODIGO_SERVICO" Type="int" />
           <Property Name="DESCRICAO_OS" Type="varchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="PRIORIDADES">
+          <Key>
+            <PropertyRef Name="CODIGO_PRIORIDADE" />
+          </Key>
+          <Property Name="CODIGO_PRIORIDADE" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DESCRICAO_PRIORIDADE" Type="varchar" MaxLength="30" />
         </EntityType>
         <EntityType Name="SERVICOS">
           <Key>
@@ -124,7 +131,7 @@
           <Property Name="SENHA" Type="varchar" MaxLength="10" />
           <Property Name="TIPO" Type="varchar" MaxLength="10" />
         </EntityType>
-        <Association Name="FK__AGENDAMEN__CODIG__45F365D3">
+        <Association Name="FK__AGENDAMEN__CODIG__31D75E8D">
           <End Role="OS" Type="Self.OS" Multiplicity="0..1" />
           <End Role="AGENDAMENTOS" Type="Self.AGENDAMENTOS" Multiplicity="*" />
           <ReferentialConstraint>
@@ -136,7 +143,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__ANALISTAS__CODIG__32E0915F">
+        <Association Name="FK__ANALISTAS__CODIG__1DD065E0">
           <End Role="ESPECIALIDADES" Type="Self.ESPECIALIDADES" Multiplicity="0..1" />
           <End Role="ANALISTAS" Type="Self.ANALISTAS" Multiplicity="*" />
           <ReferentialConstraint>
@@ -148,7 +155,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__ANALISTAS__ID_US__31EC6D26">
+        <Association Name="FK__ANALISTAS__ID_US__1CDC41A7">
           <End Role="USUARIOS" Type="Self.USUARIOS" Multiplicity="0..1" />
           <End Role="ANALISTAS" Type="Self.ANALISTAS" Multiplicity="*" />
           <ReferentialConstraint>
@@ -160,7 +167,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__CHAMADOS__CODIGO__3C69FB99">
+        <Association Name="FK__CHAMADOS__CODIGO__2759D01A">
           <End Role="CONTRATOS" Type="Self.CONTRATOS" Multiplicity="0..1" />
           <End Role="CHAMADOS" Type="Self.CHAMADOS" Multiplicity="*" />
           <ReferentialConstraint>
@@ -172,7 +179,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__CHAMADOS__CODIGO__3D5E1FD2">
+        <Association Name="FK__CHAMADOS__CODIGO__284DF453">
           <End Role="STATUS_CHAMADOS" Type="Self.STATUS_CHAMADOS" Multiplicity="0..1" />
           <End Role="CHAMADOS" Type="Self.CHAMADOS" Multiplicity="*" />
           <ReferentialConstraint>
@@ -184,7 +191,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__CLIENTES__CODIGO__36B12243">
+        <Association Name="FK__CLIENTES__CODIGO__21A0F6C4">
           <End Role="FORMA_PAGAMENTO" Type="Self.FORMA_PAGAMENTO" Multiplicity="0..1" />
           <End Role="CLIENTES" Type="Self.CLIENTES" Multiplicity="*" />
           <ReferentialConstraint>
@@ -196,7 +203,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__CLIENTES__ID_USU__35BCFE0A">
+        <Association Name="FK__CLIENTES__ID_USU__20ACD28B">
           <End Role="USUARIOS" Type="Self.USUARIOS" Multiplicity="0..1" />
           <End Role="CLIENTES" Type="Self.CLIENTES" Multiplicity="*" />
           <ReferentialConstraint>
@@ -208,7 +215,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__CONTRATOS__CODIG__398D8EEE">
+        <Association Name="FK__CONTRATOS__CODIG__247D636F">
           <End Role="CLIENTES" Type="Self.CLIENTES" Multiplicity="0..1" />
           <End Role="CONTRATOS" Type="Self.CONTRATOS" Multiplicity="*" />
           <ReferentialConstraint>
@@ -220,7 +227,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__OS__CODIGO_CHAMA__403A8C7D">
+        <Association Name="FK__OS__CODIGO_CHAMA__2B2A60FE">
           <End Role="CHAMADOS" Type="Self.CHAMADOS" Multiplicity="0..1" />
           <End Role="OS" Type="Self.OS" Multiplicity="*" />
           <ReferentialConstraint>
@@ -232,7 +239,19 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__OS__CODIGO_SERVI__4222D4EF">
+        <Association Name="FK__OS__CODIGO_PRIOR__2EFAF1E2">
+          <End Role="PRIORIDADES" Type="Self.PRIORIDADES" Multiplicity="0..1" />
+          <End Role="OS" Type="Self.OS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PRIORIDADES">
+              <PropertyRef Name="CODIGO_PRIORIDADE" />
+            </Principal>
+            <Dependent Role="OS">
+              <PropertyRef Name="CODIGO_PRIORIDADE" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__OS__CODIGO_SERVI__2D12A970">
           <End Role="SERVICOS" Type="Self.SERVICOS" Multiplicity="0..1" />
           <End Role="OS" Type="Self.OS" Multiplicity="*" />
           <ReferentialConstraint>
@@ -244,7 +263,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__OS__CODIGO_STATU__4316F928">
+        <Association Name="FK__OS__CODIGO_STATU__2E06CDA9">
           <End Role="STATUS_OS" Type="Self.STATUS_OS" Multiplicity="0..1" />
           <End Role="OS" Type="Self.OS" Multiplicity="*" />
           <ReferentialConstraint>
@@ -256,7 +275,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__OS__MATRICULA_AN__412EB0B6">
+        <Association Name="FK__OS__MATRICULA_AN__2C1E8537">
           <End Role="ANALISTAS" Type="Self.ANALISTAS" Multiplicity="0..1" />
           <End Role="OS" Type="Self.OS" Multiplicity="*" />
           <ReferentialConstraint>
@@ -268,7 +287,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__USUARIOS__CODIGO__2F10007B">
+        <Association Name="FK__USUARIOS__CODIGO__19FFD4FC">
           <End Role="STATUS_USUARIOS" Type="Self.STATUS_USUARIOS" Multiplicity="0..1" />
           <End Role="USUARIOS" Type="Self.USUARIOS" Multiplicity="*" />
           <ReferentialConstraint>
@@ -280,7 +299,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="QuantumDeskStoreContainer">
+        <EntityContainer Name="PROJETOQUANTUMModelStoreContainer">
           <EntitySet Name="AGENDAMENTOS" EntityType="Self.AGENDAMENTOS" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="ANALISTAS" EntityType="Self.ANALISTAS" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="CHAMADOS" EntityType="Self.CHAMADOS" Schema="dbo" store:Type="Tables" />
@@ -289,60 +308,65 @@
           <EntitySet Name="ESPECIALIDADES" EntityType="Self.ESPECIALIDADES" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="FORMA_PAGAMENTO" EntityType="Self.FORMA_PAGAMENTO" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="OS" EntityType="Self.OS" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PRIORIDADES" EntityType="Self.PRIORIDADES" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="SERVICOS" EntityType="Self.SERVICOS" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="STATUS_CHAMADOS" EntityType="Self.STATUS_CHAMADOS" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="STATUS_OS" EntityType="Self.STATUS_OS" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="STATUS_USUARIOS" EntityType="Self.STATUS_USUARIOS" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="USUARIOS" EntityType="Self.USUARIOS" Schema="dbo" store:Type="Tables" />
-          <AssociationSet Name="FK__AGENDAMEN__CODIG__45F365D3" Association="Self.FK__AGENDAMEN__CODIG__45F365D3">
+          <AssociationSet Name="FK__AGENDAMEN__CODIG__31D75E8D" Association="Self.FK__AGENDAMEN__CODIG__31D75E8D">
             <End Role="OS" EntitySet="OS" />
             <End Role="AGENDAMENTOS" EntitySet="AGENDAMENTOS" />
           </AssociationSet>
-          <AssociationSet Name="FK__ANALISTAS__CODIG__32E0915F" Association="Self.FK__ANALISTAS__CODIG__32E0915F">
+          <AssociationSet Name="FK__ANALISTAS__CODIG__1DD065E0" Association="Self.FK__ANALISTAS__CODIG__1DD065E0">
             <End Role="ESPECIALIDADES" EntitySet="ESPECIALIDADES" />
             <End Role="ANALISTAS" EntitySet="ANALISTAS" />
           </AssociationSet>
-          <AssociationSet Name="FK__ANALISTAS__ID_US__31EC6D26" Association="Self.FK__ANALISTAS__ID_US__31EC6D26">
+          <AssociationSet Name="FK__ANALISTAS__ID_US__1CDC41A7" Association="Self.FK__ANALISTAS__ID_US__1CDC41A7">
             <End Role="USUARIOS" EntitySet="USUARIOS" />
             <End Role="ANALISTAS" EntitySet="ANALISTAS" />
           </AssociationSet>
-          <AssociationSet Name="FK__CHAMADOS__CODIGO__3C69FB99" Association="Self.FK__CHAMADOS__CODIGO__3C69FB99">
+          <AssociationSet Name="FK__CHAMADOS__CODIGO__2759D01A" Association="Self.FK__CHAMADOS__CODIGO__2759D01A">
             <End Role="CONTRATOS" EntitySet="CONTRATOS" />
             <End Role="CHAMADOS" EntitySet="CHAMADOS" />
           </AssociationSet>
-          <AssociationSet Name="FK__CHAMADOS__CODIGO__3D5E1FD2" Association="Self.FK__CHAMADOS__CODIGO__3D5E1FD2">
+          <AssociationSet Name="FK__CHAMADOS__CODIGO__284DF453" Association="Self.FK__CHAMADOS__CODIGO__284DF453">
             <End Role="STATUS_CHAMADOS" EntitySet="STATUS_CHAMADOS" />
             <End Role="CHAMADOS" EntitySet="CHAMADOS" />
           </AssociationSet>
-          <AssociationSet Name="FK__CLIENTES__CODIGO__36B12243" Association="Self.FK__CLIENTES__CODIGO__36B12243">
+          <AssociationSet Name="FK__CLIENTES__CODIGO__21A0F6C4" Association="Self.FK__CLIENTES__CODIGO__21A0F6C4">
             <End Role="FORMA_PAGAMENTO" EntitySet="FORMA_PAGAMENTO" />
             <End Role="CLIENTES" EntitySet="CLIENTES" />
           </AssociationSet>
-          <AssociationSet Name="FK__CLIENTES__ID_USU__35BCFE0A" Association="Self.FK__CLIENTES__ID_USU__35BCFE0A">
+          <AssociationSet Name="FK__CLIENTES__ID_USU__20ACD28B" Association="Self.FK__CLIENTES__ID_USU__20ACD28B">
             <End Role="USUARIOS" EntitySet="USUARIOS" />
             <End Role="CLIENTES" EntitySet="CLIENTES" />
           </AssociationSet>
-          <AssociationSet Name="FK__CONTRATOS__CODIG__398D8EEE" Association="Self.FK__CONTRATOS__CODIG__398D8EEE">
+          <AssociationSet Name="FK__CONTRATOS__CODIG__247D636F" Association="Self.FK__CONTRATOS__CODIG__247D636F">
             <End Role="CLIENTES" EntitySet="CLIENTES" />
             <End Role="CONTRATOS" EntitySet="CONTRATOS" />
           </AssociationSet>
-          <AssociationSet Name="FK__OS__CODIGO_CHAMA__403A8C7D" Association="Self.FK__OS__CODIGO_CHAMA__403A8C7D">
+          <AssociationSet Name="FK__OS__CODIGO_CHAMA__2B2A60FE" Association="Self.FK__OS__CODIGO_CHAMA__2B2A60FE">
             <End Role="CHAMADOS" EntitySet="CHAMADOS" />
             <End Role="OS" EntitySet="OS" />
           </AssociationSet>
-          <AssociationSet Name="FK__OS__CODIGO_SERVI__4222D4EF" Association="Self.FK__OS__CODIGO_SERVI__4222D4EF">
+          <AssociationSet Name="FK__OS__CODIGO_PRIOR__2EFAF1E2" Association="Self.FK__OS__CODIGO_PRIOR__2EFAF1E2">
+            <End Role="PRIORIDADES" EntitySet="PRIORIDADES" />
+            <End Role="OS" EntitySet="OS" />
+          </AssociationSet>
+          <AssociationSet Name="FK__OS__CODIGO_SERVI__2D12A970" Association="Self.FK__OS__CODIGO_SERVI__2D12A970">
             <End Role="SERVICOS" EntitySet="SERVICOS" />
             <End Role="OS" EntitySet="OS" />
           </AssociationSet>
-          <AssociationSet Name="FK__OS__CODIGO_STATU__4316F928" Association="Self.FK__OS__CODIGO_STATU__4316F928">
+          <AssociationSet Name="FK__OS__CODIGO_STATU__2E06CDA9" Association="Self.FK__OS__CODIGO_STATU__2E06CDA9">
             <End Role="STATUS_OS" EntitySet="STATUS_OS" />
             <End Role="OS" EntitySet="OS" />
           </AssociationSet>
-          <AssociationSet Name="FK__OS__MATRICULA_AN__412EB0B6" Association="Self.FK__OS__MATRICULA_AN__412EB0B6">
+          <AssociationSet Name="FK__OS__MATRICULA_AN__2C1E8537" Association="Self.FK__OS__MATRICULA_AN__2C1E8537">
             <End Role="ANALISTAS" EntitySet="ANALISTAS" />
             <End Role="OS" EntitySet="OS" />
           </AssociationSet>
-          <AssociationSet Name="FK__USUARIOS__CODIGO__2F10007B" Association="Self.FK__USUARIOS__CODIGO__2F10007B">
+          <AssociationSet Name="FK__USUARIOS__CODIGO__19FFD4FC" Association="Self.FK__USUARIOS__CODIGO__19FFD4FC">
             <End Role="STATUS_USUARIOS" EntitySet="STATUS_USUARIOS" />
             <End Role="USUARIOS" EntitySet="USUARIOS" />
           </AssociationSet>
@@ -351,7 +375,7 @@
     </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
-      <Schema Namespace="QuantumDesk" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+      <Schema Namespace="PROJETOQUANTUMModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityType Name="AGENDAMENTOS">
           <Key>
             <PropertyRef Name="CODIGO_AGENDAMENTO" />
@@ -360,7 +384,7 @@
           <Property Name="CODIGO_OS" Type="Int32" />
           <Property Name="DATA_AGENDAMENTO" Type="DateTime" Precision="0" />
           <Property Name="DESCRICAO_AGENDAMENTO" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="OS" Relationship="Self.FK__AGENDAMEN__CODIG__45F365D3" FromRole="AGENDAMENTOS" ToRole="OS" />
+          <NavigationProperty Name="OS" Relationship="Self.FK__AGENDAMEN__CODIG__31D75E8D" FromRole="AGENDAMENTOS" ToRole="OS" />
         </EntityType>
         <EntityType Name="ANALISTAS">
           <Key>
@@ -371,9 +395,9 @@
           <Property Name="GERENTE" Type="Int32" />
           <Property Name="CARGA_HORARIA" Type="Int32" />
           <Property Name="CODIGO_ESPECIALIDADE" Type="Int32" />
-          <NavigationProperty Name="ESPECIALIDADES" Relationship="Self.FK__ANALISTAS__CODIG__32E0915F" FromRole="ANALISTAS" ToRole="ESPECIALIDADES" />
-          <NavigationProperty Name="USUARIOS" Relationship="Self.FK__ANALISTAS__ID_US__31EC6D26" FromRole="ANALISTAS" ToRole="USUARIOS" />
-          <NavigationProperty Name="OS" Relationship="Self.FK__OS__MATRICULA_AN__412EB0B6" FromRole="ANALISTAS" ToRole="OS" />
+          <NavigationProperty Name="ESPECIALIDADES" Relationship="Self.FK__ANALISTAS__CODIG__1DD065E0" FromRole="ANALISTAS" ToRole="ESPECIALIDADES" />
+          <NavigationProperty Name="USUARIOS" Relationship="Self.FK__ANALISTAS__ID_US__1CDC41A7" FromRole="ANALISTAS" ToRole="USUARIOS" />
+          <NavigationProperty Name="OS" Relationship="Self.FK__OS__MATRICULA_AN__2C1E8537" FromRole="ANALISTAS" ToRole="OS" />
         </EntityType>
         <EntityType Name="CHAMADOS">
           <Key>
@@ -385,9 +409,9 @@
           <Property Name="DATA_TERMINO_CHAMADO" Type="DateTime" Precision="0" />
           <Property Name="CODIGO_STATUS_CHAMADOS" Type="Int32" />
           <Property Name="DESCRICAO_CHAMADO" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="CONTRATOS" Relationship="Self.FK__CHAMADOS__CODIGO__3C69FB99" FromRole="CHAMADOS" ToRole="CONTRATOS" />
-          <NavigationProperty Name="STATUS_CHAMADOS" Relationship="Self.FK__CHAMADOS__CODIGO__3D5E1FD2" FromRole="CHAMADOS" ToRole="STATUS_CHAMADOS" />
-          <NavigationProperty Name="OS" Relationship="Self.FK__OS__CODIGO_CHAMA__403A8C7D" FromRole="CHAMADOS" ToRole="OS" />
+          <NavigationProperty Name="CONTRATOS" Relationship="Self.FK__CHAMADOS__CODIGO__2759D01A" FromRole="CHAMADOS" ToRole="CONTRATOS" />
+          <NavigationProperty Name="STATUS_CHAMADOS" Relationship="Self.FK__CHAMADOS__CODIGO__284DF453" FromRole="CHAMADOS" ToRole="STATUS_CHAMADOS" />
+          <NavigationProperty Name="OS" Relationship="Self.FK__OS__CODIGO_CHAMA__2B2A60FE" FromRole="CHAMADOS" ToRole="OS" />
         </EntityType>
         <EntityType Name="CLIENTES">
           <Key>
@@ -398,9 +422,9 @@
           <Property Name="RESPONSAVEL" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
           <Property Name="CODIGO_FORMA_PAGAMENTO" Type="Int32" />
           <Property Name="DIA_PAGAMENTO" Type="Int32" />
-          <NavigationProperty Name="FORMA_PAGAMENTO" Relationship="Self.FK__CLIENTES__CODIGO__36B12243" FromRole="CLIENTES" ToRole="FORMA_PAGAMENTO" />
-          <NavigationProperty Name="USUARIOS" Relationship="Self.FK__CLIENTES__ID_USU__35BCFE0A" FromRole="CLIENTES" ToRole="USUARIOS" />
-          <NavigationProperty Name="CONTRATOS" Relationship="Self.FK__CONTRATOS__CODIG__398D8EEE" FromRole="CLIENTES" ToRole="CONTRATOS" />
+          <NavigationProperty Name="FORMA_PAGAMENTO" Relationship="Self.FK__CLIENTES__CODIGO__21A0F6C4" FromRole="CLIENTES" ToRole="FORMA_PAGAMENTO" />
+          <NavigationProperty Name="USUARIOS" Relationship="Self.FK__CLIENTES__ID_USU__20ACD28B" FromRole="CLIENTES" ToRole="USUARIOS" />
+          <NavigationProperty Name="CONTRATOS" Relationship="Self.FK__CONTRATOS__CODIG__247D636F" FromRole="CLIENTES" ToRole="CONTRATOS" />
         </EntityType>
         <EntityType Name="CONTRATOS">
           <Key>
@@ -410,8 +434,8 @@
           <Property Name="CODIGO_CLIENTE" Type="Int32" />
           <Property Name="INICIO_CONTRATO" Type="DateTime" Precision="0" />
           <Property Name="FIM_CONTRATO" Type="DateTime" Precision="0" />
-          <NavigationProperty Name="CHAMADOS" Relationship="Self.FK__CHAMADOS__CODIGO__3C69FB99" FromRole="CONTRATOS" ToRole="CHAMADOS" />
-          <NavigationProperty Name="CLIENTES" Relationship="Self.FK__CONTRATOS__CODIG__398D8EEE" FromRole="CONTRATOS" ToRole="CLIENTES" />
+          <NavigationProperty Name="CHAMADOS" Relationship="Self.FK__CHAMADOS__CODIGO__2759D01A" FromRole="CONTRATOS" ToRole="CHAMADOS" />
+          <NavigationProperty Name="CLIENTES" Relationship="Self.FK__CONTRATOS__CODIG__247D636F" FromRole="CONTRATOS" ToRole="CLIENTES" />
         </EntityType>
         <EntityType Name="ESPECIALIDADES">
           <Key>
@@ -419,7 +443,7 @@
           </Key>
           <Property Name="CODIGO_ESPECIALIDADE" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="DESCRICAO_ESPECIALIDADE" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="ANALISTAS" Relationship="Self.FK__ANALISTAS__CODIG__32E0915F" FromRole="ESPECIALIDADES" ToRole="ANALISTAS" />
+          <NavigationProperty Name="ANALISTAS" Relationship="Self.FK__ANALISTAS__CODIG__1DD065E0" FromRole="ESPECIALIDADES" ToRole="ANALISTAS" />
         </EntityType>
         <EntityType Name="FORMA_PAGAMENTO">
           <Key>
@@ -427,7 +451,7 @@
           </Key>
           <Property Name="CODIGO_FORMA_PAGAMENTO" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="DESCRICAO_FORMA_PAGAMENTO" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="CLIENTES" Relationship="Self.FK__CLIENTES__CODIGO__36B12243" FromRole="FORMA_PAGAMENTO" ToRole="CLIENTES" />
+          <NavigationProperty Name="CLIENTES" Relationship="Self.FK__CLIENTES__CODIGO__21A0F6C4" FromRole="FORMA_PAGAMENTO" ToRole="CLIENTES" />
         </EntityType>
         <EntityType Name="OS">
           <Key>
@@ -439,14 +463,23 @@
           <Property Name="DATA_TERMINO_OS" Type="DateTime" Precision="0" />
           <Property Name="CODIGO_STATUS_OS" Type="Int32" />
           <Property Name="MATRICULA_ANALISTA" Type="Int32" />
-          <Property Name="PRIORIDADE" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="CODIGO_PRIORIDADE" Type="Int32" />
           <Property Name="CODIGO_SERVICO" Type="Int32" />
           <Property Name="DESCRICAO_OS" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="AGENDAMENTOS" Relationship="Self.FK__AGENDAMEN__CODIG__45F365D3" FromRole="OS" ToRole="AGENDAMENTOS" />
-          <NavigationProperty Name="ANALISTAS" Relationship="Self.FK__OS__MATRICULA_AN__412EB0B6" FromRole="OS" ToRole="ANALISTAS" />
-          <NavigationProperty Name="CHAMADOS" Relationship="Self.FK__OS__CODIGO_CHAMA__403A8C7D" FromRole="OS" ToRole="CHAMADOS" />
-          <NavigationProperty Name="SERVICOS" Relationship="Self.FK__OS__CODIGO_SERVI__4222D4EF" FromRole="OS" ToRole="SERVICOS" />
-          <NavigationProperty Name="STATUS_OS" Relationship="Self.FK__OS__CODIGO_STATU__4316F928" FromRole="OS" ToRole="STATUS_OS" />
+          <NavigationProperty Name="AGENDAMENTOS" Relationship="Self.FK__AGENDAMEN__CODIG__31D75E8D" FromRole="OS" ToRole="AGENDAMENTOS" />
+          <NavigationProperty Name="ANALISTAS" Relationship="Self.FK__OS__MATRICULA_AN__2C1E8537" FromRole="OS" ToRole="ANALISTAS" />
+          <NavigationProperty Name="CHAMADOS" Relationship="Self.FK__OS__CODIGO_CHAMA__2B2A60FE" FromRole="OS" ToRole="CHAMADOS" />
+          <NavigationProperty Name="PRIORIDADES" Relationship="Self.FK__OS__CODIGO_PRIOR__2EFAF1E2" FromRole="OS" ToRole="PRIORIDADES" />
+          <NavigationProperty Name="SERVICOS" Relationship="Self.FK__OS__CODIGO_SERVI__2D12A970" FromRole="OS" ToRole="SERVICOS" />
+          <NavigationProperty Name="STATUS_OS" Relationship="Self.FK__OS__CODIGO_STATU__2E06CDA9" FromRole="OS" ToRole="STATUS_OS" />
+        </EntityType>
+        <EntityType Name="PRIORIDADES">
+          <Key>
+            <PropertyRef Name="CODIGO_PRIORIDADE" />
+          </Key>
+          <Property Name="CODIGO_PRIORIDADE" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DESCRICAO_PRIORIDADE" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="OS" Relationship="Self.FK__OS__CODIGO_PRIOR__2EFAF1E2" FromRole="PRIORIDADES" ToRole="OS" />
         </EntityType>
         <EntityType Name="SERVICOS">
           <Key>
@@ -454,7 +487,7 @@
           </Key>
           <Property Name="CODIGO_SERVICO" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="DESCRICAO_SERVICO" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="OS" Relationship="Self.FK__OS__CODIGO_SERVI__4222D4EF" FromRole="SERVICOS" ToRole="OS" />
+          <NavigationProperty Name="OS" Relationship="Self.FK__OS__CODIGO_SERVI__2D12A970" FromRole="SERVICOS" ToRole="OS" />
         </EntityType>
         <EntityType Name="STATUS_CHAMADOS">
           <Key>
@@ -462,7 +495,7 @@
           </Key>
           <Property Name="CODIGO_STATUS_CHAMADOS" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="DESCRICAO_STATUS_CHAMADOS" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="CHAMADOS" Relationship="Self.FK__CHAMADOS__CODIGO__3D5E1FD2" FromRole="STATUS_CHAMADOS" ToRole="CHAMADOS" />
+          <NavigationProperty Name="CHAMADOS" Relationship="Self.FK__CHAMADOS__CODIGO__284DF453" FromRole="STATUS_CHAMADOS" ToRole="CHAMADOS" />
         </EntityType>
         <EntityType Name="STATUS_OS">
           <Key>
@@ -470,7 +503,7 @@
           </Key>
           <Property Name="CODIGO_STATUS_OS" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="DESCRICAO_STATUS_OS" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="OS" Relationship="Self.FK__OS__CODIGO_STATU__4316F928" FromRole="STATUS_OS" ToRole="OS" />
+          <NavigationProperty Name="OS" Relationship="Self.FK__OS__CODIGO_STATU__2E06CDA9" FromRole="STATUS_OS" ToRole="OS" />
         </EntityType>
         <EntityType Name="STATUS_USUARIOS">
           <Key>
@@ -478,7 +511,7 @@
           </Key>
           <Property Name="CODIGO_STATUS_USUARIOS" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="DESCRICAO_STATUS_USUARIOS" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="USUARIOS" Relationship="Self.FK__USUARIOS__CODIGO__2F10007B" FromRole="STATUS_USUARIOS" ToRole="USUARIOS" />
+          <NavigationProperty Name="USUARIOS" Relationship="Self.FK__USUARIOS__CODIGO__19FFD4FC" FromRole="STATUS_USUARIOS" ToRole="USUARIOS" />
         </EntityType>
         <EntityType Name="USUARIOS">
           <Key>
@@ -493,11 +526,11 @@
           <Property Name="EMAIL" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
           <Property Name="SENHA" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
           <Property Name="TIPO" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="ANALISTAS" Relationship="Self.FK__ANALISTAS__ID_US__31EC6D26" FromRole="USUARIOS" ToRole="ANALISTAS" />
-          <NavigationProperty Name="CLIENTES" Relationship="Self.FK__CLIENTES__ID_USU__35BCFE0A" FromRole="USUARIOS" ToRole="CLIENTES" />
-          <NavigationProperty Name="STATUS_USUARIOS" Relationship="Self.FK__USUARIOS__CODIGO__2F10007B" FromRole="USUARIOS" ToRole="STATUS_USUARIOS" />
+          <NavigationProperty Name="ANALISTAS" Relationship="Self.FK__ANALISTAS__ID_US__1CDC41A7" FromRole="USUARIOS" ToRole="ANALISTAS" />
+          <NavigationProperty Name="CLIENTES" Relationship="Self.FK__CLIENTES__ID_USU__20ACD28B" FromRole="USUARIOS" ToRole="CLIENTES" />
+          <NavigationProperty Name="STATUS_USUARIOS" Relationship="Self.FK__USUARIOS__CODIGO__19FFD4FC" FromRole="USUARIOS" ToRole="STATUS_USUARIOS" />
         </EntityType>
-        <Association Name="FK__AGENDAMEN__CODIG__45F365D3">
+        <Association Name="FK__AGENDAMEN__CODIG__31D75E8D">
           <End Role="OS" Type="Self.OS" Multiplicity="0..1" />
           <End Role="AGENDAMENTOS" Type="Self.AGENDAMENTOS" Multiplicity="*" />
           <ReferentialConstraint>
@@ -509,7 +542,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__ANALISTAS__CODIG__32E0915F">
+        <Association Name="FK__ANALISTAS__CODIG__1DD065E0">
           <End Role="ESPECIALIDADES" Type="Self.ESPECIALIDADES" Multiplicity="0..1" />
           <End Role="ANALISTAS" Type="Self.ANALISTAS" Multiplicity="*" />
           <ReferentialConstraint>
@@ -521,7 +554,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__ANALISTAS__ID_US__31EC6D26">
+        <Association Name="FK__ANALISTAS__ID_US__1CDC41A7">
           <End Role="USUARIOS" Type="Self.USUARIOS" Multiplicity="0..1" />
           <End Role="ANALISTAS" Type="Self.ANALISTAS" Multiplicity="*" />
           <ReferentialConstraint>
@@ -533,7 +566,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__OS__MATRICULA_AN__412EB0B6">
+        <Association Name="FK__OS__MATRICULA_AN__2C1E8537">
           <End Role="ANALISTAS" Type="Self.ANALISTAS" Multiplicity="0..1" />
           <End Role="OS" Type="Self.OS" Multiplicity="*" />
           <ReferentialConstraint>
@@ -545,7 +578,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__CHAMADOS__CODIGO__3C69FB99">
+        <Association Name="FK__CHAMADOS__CODIGO__2759D01A">
           <End Role="CONTRATOS" Type="Self.CONTRATOS" Multiplicity="0..1" />
           <End Role="CHAMADOS" Type="Self.CHAMADOS" Multiplicity="*" />
           <ReferentialConstraint>
@@ -557,7 +590,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__CHAMADOS__CODIGO__3D5E1FD2">
+        <Association Name="FK__CHAMADOS__CODIGO__284DF453">
           <End Role="STATUS_CHAMADOS" Type="Self.STATUS_CHAMADOS" Multiplicity="0..1" />
           <End Role="CHAMADOS" Type="Self.CHAMADOS" Multiplicity="*" />
           <ReferentialConstraint>
@@ -569,7 +602,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__OS__CODIGO_CHAMA__403A8C7D">
+        <Association Name="FK__OS__CODIGO_CHAMA__2B2A60FE">
           <End Role="CHAMADOS" Type="Self.CHAMADOS" Multiplicity="0..1" />
           <End Role="OS" Type="Self.OS" Multiplicity="*" />
           <ReferentialConstraint>
@@ -581,7 +614,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__CLIENTES__CODIGO__36B12243">
+        <Association Name="FK__CLIENTES__CODIGO__21A0F6C4">
           <End Role="FORMA_PAGAMENTO" Type="Self.FORMA_PAGAMENTO" Multiplicity="0..1" />
           <End Role="CLIENTES" Type="Self.CLIENTES" Multiplicity="*" />
           <ReferentialConstraint>
@@ -593,7 +626,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__CLIENTES__ID_USU__35BCFE0A">
+        <Association Name="FK__CLIENTES__ID_USU__20ACD28B">
           <End Role="USUARIOS" Type="Self.USUARIOS" Multiplicity="0..1" />
           <End Role="CLIENTES" Type="Self.CLIENTES" Multiplicity="*" />
           <ReferentialConstraint>
@@ -605,7 +638,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__CONTRATOS__CODIG__398D8EEE">
+        <Association Name="FK__CONTRATOS__CODIG__247D636F">
           <End Role="CLIENTES" Type="Self.CLIENTES" Multiplicity="0..1" />
           <End Role="CONTRATOS" Type="Self.CONTRATOS" Multiplicity="*" />
           <ReferentialConstraint>
@@ -617,7 +650,19 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__OS__CODIGO_SERVI__4222D4EF">
+        <Association Name="FK__OS__CODIGO_PRIOR__2EFAF1E2">
+          <End Role="PRIORIDADES" Type="Self.PRIORIDADES" Multiplicity="0..1" />
+          <End Role="OS" Type="Self.OS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PRIORIDADES">
+              <PropertyRef Name="CODIGO_PRIORIDADE" />
+            </Principal>
+            <Dependent Role="OS">
+              <PropertyRef Name="CODIGO_PRIORIDADE" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__OS__CODIGO_SERVI__2D12A970">
           <End Role="SERVICOS" Type="Self.SERVICOS" Multiplicity="0..1" />
           <End Role="OS" Type="Self.OS" Multiplicity="*" />
           <ReferentialConstraint>
@@ -629,7 +674,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__OS__CODIGO_STATU__4316F928">
+        <Association Name="FK__OS__CODIGO_STATU__2E06CDA9">
           <End Role="STATUS_OS" Type="Self.STATUS_OS" Multiplicity="0..1" />
           <End Role="OS" Type="Self.OS" Multiplicity="*" />
           <ReferentialConstraint>
@@ -641,7 +686,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__USUARIOS__CODIGO__2F10007B">
+        <Association Name="FK__USUARIOS__CODIGO__19FFD4FC">
           <End Role="STATUS_USUARIOS" Type="Self.STATUS_USUARIOS" Multiplicity="0..1" />
           <End Role="USUARIOS" Type="Self.USUARIOS" Multiplicity="*" />
           <ReferentialConstraint>
@@ -662,60 +707,65 @@
           <EntitySet Name="ESPECIALIDADES" EntityType="Self.ESPECIALIDADES" />
           <EntitySet Name="FORMA_PAGAMENTO" EntityType="Self.FORMA_PAGAMENTO" />
           <EntitySet Name="OS" EntityType="Self.OS" />
+          <EntitySet Name="PRIORIDADES" EntityType="Self.PRIORIDADES" />
           <EntitySet Name="SERVICOS" EntityType="Self.SERVICOS" />
           <EntitySet Name="STATUS_CHAMADOS" EntityType="Self.STATUS_CHAMADOS" />
           <EntitySet Name="STATUS_OS" EntityType="Self.STATUS_OS" />
           <EntitySet Name="STATUS_USUARIOS" EntityType="Self.STATUS_USUARIOS" />
           <EntitySet Name="USUARIOS" EntityType="Self.USUARIOS" />
-          <AssociationSet Name="FK__AGENDAMEN__CODIG__45F365D3" Association="Self.FK__AGENDAMEN__CODIG__45F365D3">
+          <AssociationSet Name="FK__AGENDAMEN__CODIG__31D75E8D" Association="Self.FK__AGENDAMEN__CODIG__31D75E8D">
             <End Role="OS" EntitySet="OS" />
             <End Role="AGENDAMENTOS" EntitySet="AGENDAMENTOS" />
           </AssociationSet>
-          <AssociationSet Name="FK__ANALISTAS__CODIG__32E0915F" Association="Self.FK__ANALISTAS__CODIG__32E0915F">
+          <AssociationSet Name="FK__ANALISTAS__CODIG__1DD065E0" Association="Self.FK__ANALISTAS__CODIG__1DD065E0">
             <End Role="ESPECIALIDADES" EntitySet="ESPECIALIDADES" />
             <End Role="ANALISTAS" EntitySet="ANALISTAS" />
           </AssociationSet>
-          <AssociationSet Name="FK__ANALISTAS__ID_US__31EC6D26" Association="Self.FK__ANALISTAS__ID_US__31EC6D26">
+          <AssociationSet Name="FK__ANALISTAS__ID_US__1CDC41A7" Association="Self.FK__ANALISTAS__ID_US__1CDC41A7">
             <End Role="USUARIOS" EntitySet="USUARIOS" />
             <End Role="ANALISTAS" EntitySet="ANALISTAS" />
           </AssociationSet>
-          <AssociationSet Name="FK__OS__MATRICULA_AN__412EB0B6" Association="Self.FK__OS__MATRICULA_AN__412EB0B6">
+          <AssociationSet Name="FK__OS__MATRICULA_AN__2C1E8537" Association="Self.FK__OS__MATRICULA_AN__2C1E8537">
             <End Role="ANALISTAS" EntitySet="ANALISTAS" />
             <End Role="OS" EntitySet="OS" />
           </AssociationSet>
-          <AssociationSet Name="FK__CHAMADOS__CODIGO__3C69FB99" Association="Self.FK__CHAMADOS__CODIGO__3C69FB99">
+          <AssociationSet Name="FK__CHAMADOS__CODIGO__2759D01A" Association="Self.FK__CHAMADOS__CODIGO__2759D01A">
             <End Role="CONTRATOS" EntitySet="CONTRATOS" />
             <End Role="CHAMADOS" EntitySet="CHAMADOS" />
           </AssociationSet>
-          <AssociationSet Name="FK__CHAMADOS__CODIGO__3D5E1FD2" Association="Self.FK__CHAMADOS__CODIGO__3D5E1FD2">
+          <AssociationSet Name="FK__CHAMADOS__CODIGO__284DF453" Association="Self.FK__CHAMADOS__CODIGO__284DF453">
             <End Role="STATUS_CHAMADOS" EntitySet="STATUS_CHAMADOS" />
             <End Role="CHAMADOS" EntitySet="CHAMADOS" />
           </AssociationSet>
-          <AssociationSet Name="FK__OS__CODIGO_CHAMA__403A8C7D" Association="Self.FK__OS__CODIGO_CHAMA__403A8C7D">
+          <AssociationSet Name="FK__OS__CODIGO_CHAMA__2B2A60FE" Association="Self.FK__OS__CODIGO_CHAMA__2B2A60FE">
             <End Role="CHAMADOS" EntitySet="CHAMADOS" />
             <End Role="OS" EntitySet="OS" />
           </AssociationSet>
-          <AssociationSet Name="FK__CLIENTES__CODIGO__36B12243" Association="Self.FK__CLIENTES__CODIGO__36B12243">
+          <AssociationSet Name="FK__CLIENTES__CODIGO__21A0F6C4" Association="Self.FK__CLIENTES__CODIGO__21A0F6C4">
             <End Role="FORMA_PAGAMENTO" EntitySet="FORMA_PAGAMENTO" />
             <End Role="CLIENTES" EntitySet="CLIENTES" />
           </AssociationSet>
-          <AssociationSet Name="FK__CLIENTES__ID_USU__35BCFE0A" Association="Self.FK__CLIENTES__ID_USU__35BCFE0A">
+          <AssociationSet Name="FK__CLIENTES__ID_USU__20ACD28B" Association="Self.FK__CLIENTES__ID_USU__20ACD28B">
             <End Role="USUARIOS" EntitySet="USUARIOS" />
             <End Role="CLIENTES" EntitySet="CLIENTES" />
           </AssociationSet>
-          <AssociationSet Name="FK__CONTRATOS__CODIG__398D8EEE" Association="Self.FK__CONTRATOS__CODIG__398D8EEE">
+          <AssociationSet Name="FK__CONTRATOS__CODIG__247D636F" Association="Self.FK__CONTRATOS__CODIG__247D636F">
             <End Role="CLIENTES" EntitySet="CLIENTES" />
             <End Role="CONTRATOS" EntitySet="CONTRATOS" />
           </AssociationSet>
-          <AssociationSet Name="FK__OS__CODIGO_SERVI__4222D4EF" Association="Self.FK__OS__CODIGO_SERVI__4222D4EF">
+          <AssociationSet Name="FK__OS__CODIGO_PRIOR__2EFAF1E2" Association="Self.FK__OS__CODIGO_PRIOR__2EFAF1E2">
+            <End Role="PRIORIDADES" EntitySet="PRIORIDADES" />
+            <End Role="OS" EntitySet="OS" />
+          </AssociationSet>
+          <AssociationSet Name="FK__OS__CODIGO_SERVI__2D12A970" Association="Self.FK__OS__CODIGO_SERVI__2D12A970">
             <End Role="SERVICOS" EntitySet="SERVICOS" />
             <End Role="OS" EntitySet="OS" />
           </AssociationSet>
-          <AssociationSet Name="FK__OS__CODIGO_STATU__4316F928" Association="Self.FK__OS__CODIGO_STATU__4316F928">
+          <AssociationSet Name="FK__OS__CODIGO_STATU__2E06CDA9" Association="Self.FK__OS__CODIGO_STATU__2E06CDA9">
             <End Role="STATUS_OS" EntitySet="STATUS_OS" />
             <End Role="OS" EntitySet="OS" />
           </AssociationSet>
-          <AssociationSet Name="FK__USUARIOS__CODIGO__2F10007B" Association="Self.FK__USUARIOS__CODIGO__2F10007B">
+          <AssociationSet Name="FK__USUARIOS__CODIGO__19FFD4FC" Association="Self.FK__USUARIOS__CODIGO__19FFD4FC">
             <End Role="STATUS_USUARIOS" EntitySet="STATUS_USUARIOS" />
             <End Role="USUARIOS" EntitySet="USUARIOS" />
           </AssociationSet>
@@ -725,9 +775,9 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="QuantumDeskStoreContainer" CdmEntityContainer="QuantumContext">
+        <EntityContainerMapping StorageEntityContainer="PROJETOQUANTUMModelStoreContainer" CdmEntityContainer="QuantumContext">
           <EntitySetMapping Name="AGENDAMENTOS">
-            <EntityTypeMapping TypeName="QuantumDesk.AGENDAMENTOS">
+            <EntityTypeMapping TypeName="PROJETOQUANTUMModel.AGENDAMENTOS">
               <MappingFragment StoreEntitySet="AGENDAMENTOS">
                 <ScalarProperty Name="CODIGO_AGENDAMENTO" ColumnName="CODIGO_AGENDAMENTO" />
                 <ScalarProperty Name="CODIGO_OS" ColumnName="CODIGO_OS" />
@@ -737,7 +787,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="ANALISTAS">
-            <EntityTypeMapping TypeName="QuantumDesk.ANALISTAS">
+            <EntityTypeMapping TypeName="PROJETOQUANTUMModel.ANALISTAS">
               <MappingFragment StoreEntitySet="ANALISTAS">
                 <ScalarProperty Name="MATRICULA_ANALISTA" ColumnName="MATRICULA_ANALISTA" />
                 <ScalarProperty Name="ID_USUARIO" ColumnName="ID_USUARIO" />
@@ -748,7 +798,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="CHAMADOS">
-            <EntityTypeMapping TypeName="QuantumDesk.CHAMADOS">
+            <EntityTypeMapping TypeName="PROJETOQUANTUMModel.CHAMADOS">
               <MappingFragment StoreEntitySet="CHAMADOS">
                 <ScalarProperty Name="CODIGO_CHAMADO" ColumnName="CODIGO_CHAMADO" />
                 <ScalarProperty Name="CODIGO_CONTRATO" ColumnName="CODIGO_CONTRATO" />
@@ -760,7 +810,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="CLIENTES">
-            <EntityTypeMapping TypeName="QuantumDesk.CLIENTES">
+            <EntityTypeMapping TypeName="PROJETOQUANTUMModel.CLIENTES">
               <MappingFragment StoreEntitySet="CLIENTES">
                 <ScalarProperty Name="CODIGO_CLIENTE" ColumnName="CODIGO_CLIENTE" />
                 <ScalarProperty Name="ID_USUARIO" ColumnName="ID_USUARIO" />
@@ -771,7 +821,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="CONTRATOS">
-            <EntityTypeMapping TypeName="QuantumDesk.CONTRATOS">
+            <EntityTypeMapping TypeName="PROJETOQUANTUMModel.CONTRATOS">
               <MappingFragment StoreEntitySet="CONTRATOS">
                 <ScalarProperty Name="CODIGO_CONTRATO" ColumnName="CODIGO_CONTRATO" />
                 <ScalarProperty Name="CODIGO_CLIENTE" ColumnName="CODIGO_CLIENTE" />
@@ -781,7 +831,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="ESPECIALIDADES">
-            <EntityTypeMapping TypeName="QuantumDesk.ESPECIALIDADES">
+            <EntityTypeMapping TypeName="PROJETOQUANTUMModel.ESPECIALIDADES">
               <MappingFragment StoreEntitySet="ESPECIALIDADES">
                 <ScalarProperty Name="CODIGO_ESPECIALIDADE" ColumnName="CODIGO_ESPECIALIDADE" />
                 <ScalarProperty Name="DESCRICAO_ESPECIALIDADE" ColumnName="DESCRICAO_ESPECIALIDADE" />
@@ -789,7 +839,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="FORMA_PAGAMENTO">
-            <EntityTypeMapping TypeName="QuantumDesk.FORMA_PAGAMENTO">
+            <EntityTypeMapping TypeName="PROJETOQUANTUMModel.FORMA_PAGAMENTO">
               <MappingFragment StoreEntitySet="FORMA_PAGAMENTO">
                 <ScalarProperty Name="CODIGO_FORMA_PAGAMENTO" ColumnName="CODIGO_FORMA_PAGAMENTO" />
                 <ScalarProperty Name="DESCRICAO_FORMA_PAGAMENTO" ColumnName="DESCRICAO_FORMA_PAGAMENTO" />
@@ -797,7 +847,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="OS">
-            <EntityTypeMapping TypeName="QuantumDesk.OS">
+            <EntityTypeMapping TypeName="PROJETOQUANTUMModel.OS">
               <MappingFragment StoreEntitySet="OS">
                 <ScalarProperty Name="CODIGO_OS" ColumnName="CODIGO_OS" />
                 <ScalarProperty Name="CODIGO_CHAMADO" ColumnName="CODIGO_CHAMADO" />
@@ -805,14 +855,22 @@
                 <ScalarProperty Name="DATA_TERMINO_OS" ColumnName="DATA_TERMINO_OS" />
                 <ScalarProperty Name="CODIGO_STATUS_OS" ColumnName="CODIGO_STATUS_OS" />
                 <ScalarProperty Name="MATRICULA_ANALISTA" ColumnName="MATRICULA_ANALISTA" />
-                <ScalarProperty Name="PRIORIDADE" ColumnName="PRIORIDADE" />
+                <ScalarProperty Name="CODIGO_PRIORIDADE" ColumnName="CODIGO_PRIORIDADE" />
                 <ScalarProperty Name="CODIGO_SERVICO" ColumnName="CODIGO_SERVICO" />
                 <ScalarProperty Name="DESCRICAO_OS" ColumnName="DESCRICAO_OS" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="PRIORIDADES">
+            <EntityTypeMapping TypeName="PROJETOQUANTUMModel.PRIORIDADES">
+              <MappingFragment StoreEntitySet="PRIORIDADES">
+                <ScalarProperty Name="CODIGO_PRIORIDADE" ColumnName="CODIGO_PRIORIDADE" />
+                <ScalarProperty Name="DESCRICAO_PRIORIDADE" ColumnName="DESCRICAO_PRIORIDADE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="SERVICOS">
-            <EntityTypeMapping TypeName="QuantumDesk.SERVICOS">
+            <EntityTypeMapping TypeName="PROJETOQUANTUMModel.SERVICOS">
               <MappingFragment StoreEntitySet="SERVICOS">
                 <ScalarProperty Name="CODIGO_SERVICO" ColumnName="CODIGO_SERVICO" />
                 <ScalarProperty Name="DESCRICAO_SERVICO" ColumnName="DESCRICAO_SERVICO" />
@@ -820,7 +878,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="STATUS_CHAMADOS">
-            <EntityTypeMapping TypeName="QuantumDesk.STATUS_CHAMADOS">
+            <EntityTypeMapping TypeName="PROJETOQUANTUMModel.STATUS_CHAMADOS">
               <MappingFragment StoreEntitySet="STATUS_CHAMADOS">
                 <ScalarProperty Name="CODIGO_STATUS_CHAMADOS" ColumnName="CODIGO_STATUS_CHAMADOS" />
                 <ScalarProperty Name="DESCRICAO_STATUS_CHAMADOS" ColumnName="DESCRICAO_STATUS_CHAMADOS" />
@@ -828,7 +886,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="STATUS_OS">
-            <EntityTypeMapping TypeName="QuantumDesk.STATUS_OS">
+            <EntityTypeMapping TypeName="PROJETOQUANTUMModel.STATUS_OS">
               <MappingFragment StoreEntitySet="STATUS_OS">
                 <ScalarProperty Name="CODIGO_STATUS_OS" ColumnName="CODIGO_STATUS_OS" />
                 <ScalarProperty Name="DESCRICAO_STATUS_OS" ColumnName="DESCRICAO_STATUS_OS" />
@@ -836,7 +894,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="STATUS_USUARIOS">
-            <EntityTypeMapping TypeName="QuantumDesk.STATUS_USUARIOS">
+            <EntityTypeMapping TypeName="PROJETOQUANTUMModel.STATUS_USUARIOS">
               <MappingFragment StoreEntitySet="STATUS_USUARIOS">
                 <ScalarProperty Name="CODIGO_STATUS_USUARIOS" ColumnName="CODIGO_STATUS_USUARIOS" />
                 <ScalarProperty Name="DESCRICAO_STATUS_USUARIOS" ColumnName="DESCRICAO_STATUS_USUARIOS" />
@@ -844,7 +902,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="USUARIOS">
-            <EntityTypeMapping TypeName="QuantumDesk.USUARIOS">
+            <EntityTypeMapping TypeName="PROJETOQUANTUMModel.USUARIOS">
               <MappingFragment StoreEntitySet="USUARIOS">
                 <ScalarProperty Name="ID_USUARIO" ColumnName="ID_USUARIO" />
                 <ScalarProperty Name="CPF_CNPJ" ColumnName="CPF_CNPJ" />

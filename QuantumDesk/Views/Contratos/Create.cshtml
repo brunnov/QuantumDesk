@@ -4,7 +4,16 @@
     ViewBag.Title = "Create";
 }
 
-<h2>Create</h2>
+<script type="text/javascript">
+$.noConflict();
+jQuery(document).ready(function ($) {
+    $(function () {
+        $('.datepicker').datepicker();
+    });
+});
+    </script>
+
+<h2>Cadastro de Contrato</h2>
 
 
 @using (Html.BeginForm()) 
@@ -12,11 +21,11 @@
     @Html.AntiForgeryToken()
     
     <div class="form-horizontal">
-        <h4>CONTRATOS</h4>
+        <h4></h4>
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         <div class="form-group">
-            @Html.LabelFor(model => model.CODIGO_CLIENTE, "CODIGO_CLIENTE", htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.CODIGO_CLIENTE,"Cliente:", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.DropDownList("CODIGO_CLIENTE", null, htmlAttributes: new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.CODIGO_CLIENTE, "", new { @class = "text-danger" })
@@ -26,7 +35,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.INICIO_CONTRATO, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.INICIO_CONTRATO, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.EditorFor(model => model.INICIO_CONTRATO, new { htmlAttributes = new { @class = "datepicker" } })
                 @Html.ValidationMessageFor(model => model.INICIO_CONTRATO, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -34,21 +43,21 @@
         <div class="form-group">
             @Html.LabelFor(model => model.FIM_CONTRATO, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.FIM_CONTRATO, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.EditorFor(model => model.FIM_CONTRATO, new { htmlAttributes = new { @class = "datepicker" } })
                 @Html.ValidationMessageFor(model => model.FIM_CONTRATO, "", new { @class = "text-danger" })
             </div>
         </div>
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Create" class="btn btn-default" />
+                <input type="submit" value="Criar" class="btn btn-default" />
             </div>
         </div>
     </div>
 }
 
 <div>
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Retornar à lista de contratos", "Index")
 </div>
 
 @section Scripts {

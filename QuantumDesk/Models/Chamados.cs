@@ -7,17 +7,23 @@ using System.Web;
 
 namespace QuantumDesk.Models
 {
-    [Table("CHAMADOS")]
+    //[Table("CHAMADOS")]
     public class Chamados
     {
         //public Chamados()
         //{
         //    Os = new HashSet<Os>();
         //}
+
+
         [Key]
         public int CodigoChamado { get; set; }
         public int CodigoContrato { get; set; }
+
+       
         public DateTime DataAberturaChamado { get; set; }
+
+      
         public DateTime DataTerminoChamado { get; set; }
         public string StatusChamado { get; set; }
         public string DescricaoChamado { get; set; }

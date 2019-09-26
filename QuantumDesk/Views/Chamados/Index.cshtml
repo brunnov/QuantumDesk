@@ -4,27 +4,27 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<h2>Chamados</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Criar novo Chamado", "Create")
 </p>
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.DATA_ABERTURA_CHAMADO)
+            Data de Abertura
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.DATA_TERMINO_CHAMADO)
+            Data do Término
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.DESCRICAO_CHAMADO)
+            Descrição
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.CONTRATOS.CODIGO_CONTRATO)
+            Cliente(Codigo Contrato)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.STATUS_CHAMADOS.DESCRICAO_STATUS_CHAMADOS)
+            Status
         </th>
         <th></th>
     </tr>
@@ -41,15 +41,15 @@
             @Html.DisplayFor(modelItem => item.DESCRICAO_CHAMADO)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.CONTRATOS.CODIGO_CONTRATO)
+            @Html.DisplayFor(modelItem => item.CONTRATOS.CLIENTES.RESPONSAVEL)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.STATUS_CHAMADOS.DESCRICAO_STATUS_CHAMADOS)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.CODIGO_CHAMADO }) |
-            @Html.ActionLink("Details", "Details", new { id=item.CODIGO_CHAMADO }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.CODIGO_CHAMADO })
+            @Html.ActionLink("Editar", "Edit", new { id=item.CODIGO_CHAMADO }) |
+            @Html.ActionLink("Detalhes", "Details", new { id=item.CODIGO_CHAMADO }) |
+            @Html.ActionLink("Deletar", "Delete", new { id=item.CODIGO_CHAMADO })
         </td>
     </tr>
 }
