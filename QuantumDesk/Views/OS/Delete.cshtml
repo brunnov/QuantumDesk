@@ -1,0 +1,88 @@
+﻿@model QuantumDesk.OS
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>OS</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.DATA_ABERTURA_OS)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DATA_ABERTURA_OS)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DATA_TERMINO_OS)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DATA_TERMINO_OS)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DESCRICAO_OS)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DESCRICAO_OS)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ANALISTAS.MATRICULA_ANALISTA)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ANALISTAS.MATRICULA_ANALISTA)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CHAMADOS.DESCRICAO_CHAMADO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CHAMADOS.DESCRICAO_CHAMADO)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PRIORIDADES.DESCRICAO_PRIORIDADE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PRIORIDADES.DESCRICAO_PRIORIDADE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SERVICOS.DESCRICAO_SERVICO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SERVICOS.DESCRICAO_SERVICO)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.STATUS_OS.DESCRICAO_STATUS_OS)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.STATUS_OS.DESCRICAO_STATUS_OS)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

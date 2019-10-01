@@ -1,0 +1,42 @@
+﻿@model QuantumDesk.AGENDAMENTOS
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>AGENDAMENTOS</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.DATA_AGENDAMENTO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DATA_AGENDAMENTO)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DESCRICAO_AGENDAMENTO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DESCRICAO_AGENDAMENTO)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.OS.DESCRICAO_OS)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OS.DESCRICAO_OS)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.CODIGO_AGENDAMENTO }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

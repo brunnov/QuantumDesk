@@ -1,0 +1,45 @@
+﻿@model IEnumerable<QuantumDesk.AGENDAMENTOS>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.DATA_AGENDAMENTO)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DESCRICAO_AGENDAMENTO)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.OS.DESCRICAO_OS)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.DATA_AGENDAMENTO)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DESCRICAO_AGENDAMENTO)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.OS.DESCRICAO_OS)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.CODIGO_AGENDAMENTO }) |
+            @Html.ActionLink("Details", "Details", new { id=item.CODIGO_AGENDAMENTO }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.CODIGO_AGENDAMENTO })
+        </td>
+    </tr>
+}
+
+</table>

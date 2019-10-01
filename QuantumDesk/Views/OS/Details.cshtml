@@ -1,0 +1,82 @@
+﻿@model QuantumDesk.OS
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>OS</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.DATA_ABERTURA_OS)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DATA_ABERTURA_OS)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DATA_TERMINO_OS)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DATA_TERMINO_OS)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DESCRICAO_OS)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DESCRICAO_OS)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ANALISTAS.MATRICULA_ANALISTA)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ANALISTAS.MATRICULA_ANALISTA)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CHAMADOS.DESCRICAO_CHAMADO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CHAMADOS.DESCRICAO_CHAMADO)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PRIORIDADES.DESCRICAO_PRIORIDADE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PRIORIDADES.DESCRICAO_PRIORIDADE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SERVICOS.DESCRICAO_SERVICO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SERVICOS.DESCRICAO_SERVICO)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.STATUS_OS.DESCRICAO_STATUS_OS)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.STATUS_OS.DESCRICAO_STATUS_OS)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.CODIGO_OS }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

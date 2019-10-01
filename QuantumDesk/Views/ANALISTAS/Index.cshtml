@@ -1,0 +1,51 @@
+﻿@model IEnumerable<QuantumDesk.ANALISTAS>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.GERENTE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CARGA_HORARIA)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ESPECIALIDADES.DESCRICAO_ESPECIALIDADE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.USUARIOS.CPF_CNPJ)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.GERENTE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CARGA_HORARIA)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ESPECIALIDADES.DESCRICAO_ESPECIALIDADE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.USUARIOS.CPF_CNPJ)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.MATRICULA_ANALISTA }) |
+            @Html.ActionLink("Details", "Details", new { id=item.MATRICULA_ANALISTA }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.MATRICULA_ANALISTA })
+        </td>
+    </tr>
+}
+
+</table>

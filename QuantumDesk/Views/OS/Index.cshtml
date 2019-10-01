@@ -1,0 +1,75 @@
+﻿@model IEnumerable<QuantumDesk.OS>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.DATA_ABERTURA_OS)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DATA_TERMINO_OS)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DESCRICAO_OS)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ANALISTAS.MATRICULA_ANALISTA)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CHAMADOS.DESCRICAO_CHAMADO)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PRIORIDADES.DESCRICAO_PRIORIDADE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SERVICOS.DESCRICAO_SERVICO)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.STATUS_OS.DESCRICAO_STATUS_OS)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.DATA_ABERTURA_OS)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DATA_TERMINO_OS)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DESCRICAO_OS)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ANALISTAS.MATRICULA_ANALISTA)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CHAMADOS.DESCRICAO_CHAMADO)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PRIORIDADES.DESCRICAO_PRIORIDADE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SERVICOS.DESCRICAO_SERVICO)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.STATUS_OS.DESCRICAO_STATUS_OS)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.CODIGO_OS }) |
+            @Html.ActionLink("Details", "Details", new { id=item.CODIGO_OS }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.CODIGO_OS })
+        </td>
+    </tr>
+}
+
+</table>

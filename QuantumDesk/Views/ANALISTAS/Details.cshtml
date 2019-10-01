@@ -1,0 +1,50 @@
+﻿@model QuantumDesk.ANALISTAS
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>ANALISTAS</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.GERENTE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.GERENTE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CARGA_HORARIA)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CARGA_HORARIA)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ESPECIALIDADES.DESCRICAO_ESPECIALIDADE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ESPECIALIDADES.DESCRICAO_ESPECIALIDADE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.USUARIOS.CPF_CNPJ)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.USUARIOS.CPF_CNPJ)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.MATRICULA_ANALISTA }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
